@@ -1,0 +1,245 @@
+/* Abertura + hero do Grupo PowerMetrics.
+   Palco fixo: cena 3D (fundo, piso, peças) < holofote < pinos dos rótulos < rótulos < títulos < topo.
+   Títulos sempre centralizados no alto; a animação acontece embaixo deles. */
+
+:root {
+  /* Marca PowerMetrics (powermetrics.com.br) */
+  --laranja: #F58434;
+  --laranja-escuro: #D9691C;
+  --laranja-claro: #FFD3AE;
+  --laranja-brilho: rgba(245, 132, 52, 0.55);
+  --grafite: #33363D;
+  --superficie-2: #4A4E57;
+  --borda: rgba(255, 255, 255, 0.11);
+  --borda-forte: rgba(255, 255, 255, 0.22);
+  --texto: #FAFBFD;
+  --texto-suave: #C7CDD8;
+  --texto-fraco: #9BA2B0;
+  --fundo: #121316;
+
+  --f-titulo: "Space Grotesk", Inter, system-ui, sans-serif;
+  --f-texto: Inter, -apple-system, system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "Courier New", monospace;
+
+  --ease: cubic-bezier(.16, .84, .44, 1);
+  --margem: clamp(16px, 4vw, 56px);
+  --topo-h: 76px;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--f-texto);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; }
+button { font: inherit; }
+
+/* ---------- topo ---------- */
+.topo {
+  position: fixed; inset: 0 0 auto 0; z-index: 30;
+  height: var(--topo-h);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding-inline: var(--margem);
+  padding-top: env(safe-area-inset-top, 0px);
+  background: linear-gradient(to bottom, rgba(18, 19, 22, 0.7), rgba(18, 19, 22, 0));
+}
+.marca { display: block; line-height: 0; border-radius: 6px; }
+.marca img { height: 34px; width: auto; }
+.topo-acoes { display: flex; align-items: center; gap: 10px; }
+.pular {
+  font: 500 11px/1 var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--texto-suave); background: transparent;
+  border: 1px solid var(--borda); border-radius: 999px; padding: 11px 16px; cursor: pointer;
+  transition: color .2s, border-color .2s, opacity .4s var(--ease), visibility .4s;
+}
+.pular:hover { color: var(--texto); border-color: var(--borda-forte); }
+.hero-on .pular { opacity: 0; visibility: hidden; }
+
+/* ---------- botões (marca) + Kinetics · Shine Sweep ---------- */
+.btn {
+  position: relative; overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  border-radius: 999px; border: 0.8px solid transparent;
+  font: 600 15px/1 var(--f-titulo); padding: 15px 30px; min-height: 48px;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: transform .15s ease-out, box-shadow .3s var(--ease), background-color .25s, border-color .25s;
+}
+.btn-primario {
+  color: #0A0602;
+  background: linear-gradient(135deg, var(--laranja), var(--laranja-escuro));
+  box-shadow: 0 0 0 1px rgba(245, 132, 52, 0.3), 0 10px 34px -8px var(--laranja-brilho);
+}
+.btn-primario::before {
+  content: ""; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
+  transform: skewX(-20deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+}
+.btn-primario:hover::before { left: 120%; transition: left .9s cubic-bezier(0.65, 0, 0.35, 1); }
+.btn-primario:hover { box-shadow: 0 0 0 1px rgba(245, 132, 52, 0.5), 0 16px 44px -8px rgba(245, 132, 52, 0.85); }
+.btn-escuro { color: var(--texto); background: rgba(74, 78, 87, 0.55); border-color: var(--borda-forte); backdrop-filter: blur(8px); }
+.btn-escuro:hover { background: rgba(90, 95, 106, 0.75); }
+.btn-pequeno { font-size: 13px; padding: 10px 20px; min-height: 40px; }
+.btn:focus-visible, .pular:focus-visible, .marca:focus-visible { outline: 2px solid var(--laranja); outline-offset: 3px; }
+.ima { display: inline-flex; padding: 16px; margin: -16px; } /* área do ímã (Kinetics · Magnetic Button) */
+
+/* ---------- palco ---------- */
+.abertura { position: relative; height: 340vh; height: 340svh; }
+.palco { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; background: var(--fundo); }
+.cena { position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 1; }
+
+/* Kinetics · Cursor Spotlight, ampliado para o palco inteiro */
+.holofote {
+  position: absolute; z-index: 2; left: 0; top: 0; width: 680px; height: 680px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 132, 52, 0.11), transparent 70%);
+  mix-blend-mode: screen; pointer-events: none; opacity: 0; transition: opacity .6s var(--ease);
+  will-change: transform;
+}
+.com-mouse .holofote { opacity: 1; }
+
+.linhas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; overflow: visible; }
+.linhas line { stroke: rgba(255, 255, 255, 0.4); stroke-width: 1; stroke-dasharray: 2 3; }
+.linhas circle { fill: var(--laranja); }
+
+/* ---------- títulos centralizados ---------- */
+.atos {
+  position: absolute; z-index: 5; left: 0; right: 0;
+  top: calc(var(--topo-h) + clamp(0px, 1.4vh, 16px));
+  display: grid; justify-items: center;
+  padding-inline: var(--margem);
+  text-align: center; pointer-events: none;
+}
+.ato {
+  grid-area: 1 / 1;
+  align-self: start; /* cada ato mede só o próprio conteúdo: a cena começa logo abaixo dele */
+  display: flex; flex-direction: column; align-items: center;
+  gap: clamp(10px, 1.7vh, 18px);
+  width: 100%; max-width: 1180px;
+}
+.unidade { will-change: transform, opacity, filter; opacity: 0; }
+
+.titulo {
+  margin: 0;
+  font: 600 clamp(40px, min(5.7vw, 8.4vh), 98px)/0.96 var(--f-titulo);
+  letter-spacing: -0.05em;
+  max-width: 16ch; text-wrap: balance;
+  color: var(--texto);
+}
+.titulo-hero {
+  font-weight: 700;
+  font-size: clamp(34px, min(5.3vw, 7.6vh), 92px);
+  line-height: 1.0; letter-spacing: -0.042em;
+  max-width: 20ch;
+}
+.palavra { display: inline-block; }
+/* Kinetics · Gradient Shimmer Text, nas cores da marca */
+.titulo em {
+  font-style: normal; display: inline-block;
+  background: linear-gradient(100deg, var(--laranja) 30%, var(--laranja-claro) 50%, var(--laranja) 70%);
+  background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: brilho-texto 3s linear infinite;
+  padding-bottom: 0.06em; margin-bottom: -0.06em;
+}
+@keyframes brilho-texto { to { background-position: -200% center; } }
+
+.sub {
+  margin: 0; max-width: 46ch;
+  font: 400 clamp(15px, min(1.3vw, 2.2vh), 19px)/1.55 var(--f-texto);
+  color: var(--texto-suave); text-wrap: balance;
+}
+.acoes { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: clamp(2px, 1vh, 10px); }
+.hero-on .acoes { pointer-events: auto; }
+.hero-estatico { display: none; }
+
+/* ---------- assinatura: sai de dentro do símbolo (o JS posiciona as bordas de corte) ---------- */
+.assinatura { position: absolute; inset: 0; z-index: 4; margin: 0; pointer-events: none; }
+.assinatura-lado { position: absolute; left: 0; top: 0; display: block; overflow: hidden; visibility: hidden; }
+.assinatura-esq { text-align: right; }
+.assinatura-lado > span {
+  display: inline-block; white-space: nowrap; padding: 0.06em 0.04em;
+  font: 600 clamp(20px, 2.35vw, 38px)/1.1 var(--f-titulo); letter-spacing: -0.03em;
+  will-change: transform, opacity, filter;
+}
+.assinatura-esq > span { color: var(--texto); }
+.assinatura-dir > span { color: var(--laranja); }
+.estreito .assinatura-lado { text-align: center; }
+.estreito .assinatura-lado > span { font-size: clamp(19px, 5.8vw, 25px); }
+
+/* ---------- rótulos das frentes (pílulas presas ao anel) ---------- */
+.frentes { list-style: none; margin: 0; padding: 0; position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+.frente {
+  position: absolute; left: 0; top: 0;
+  display: inline-flex; align-items: center; gap: 9px; white-space: nowrap;
+  padding: 6px 13px 6px 6px; border-radius: 999px;
+  background: rgba(20, 21, 25, 0.78); border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  font: 500 11px/1 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--texto);
+  opacity: 0; will-change: transform, opacity;
+}
+.frente-n {
+  display: inline-grid; place-items: center; min-width: 26px; height: 22px; padding: 0 6px; border-radius: 999px;
+  background: var(--laranja); color: #0A0602; letter-spacing: 0.04em;
+}
+.nome-curto { display: none; }
+.compacto .nome-longo { display: none; }
+.compacto .nome-curto { display: inline; }
+.compacto .frente { font-size: 10px; padding: 5px 11px 5px 5px; gap: 7px; }
+.compacto .frente-n { min-width: 22px; height: 19px; }
+
+.nucleo {
+  position: absolute; left: 0; top: 0; z-index: 4; opacity: 0; pointer-events: none;
+  font: 500 10.5px/1 var(--f-mono); letter-spacing: 0.18em; text-transform: uppercase; color: #0A0602;
+  padding: 7px 12px; border-radius: 999px; background: var(--texto);
+  box-shadow: 0 0 0 4px rgba(250, 251, 253, 0.12), 0 8px 30px -6px rgba(250, 251, 253, 0.45);
+  white-space: nowrap;
+}
+
+/* ---------- etapas e dica ---------- */
+/* régua vertical na lateral direita: libera o rodapé para a cena */
+.etapas {
+  position: absolute; z-index: 6; right: var(--margem); top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; align-items: flex-end; gap: 22px; padding: 2px 16px 2px 0;
+  font: 500 10.5px/1 var(--f-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--texto-fraco);
+}
+.etapa { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; transition: color .4s var(--ease); }
+.etapa b { font-weight: 500; color: inherit; opacity: .6; }
+.etapa.ativa { color: var(--texto); }
+.etapa.ativa b { color: var(--laranja); opacity: 1; }
+.etapas-barra { position: absolute; top: 0; bottom: 0; right: 0; width: 1px; background: rgba(255, 255, 255, 0.12); overflow: hidden; }
+.etapas-barra i { position: absolute; inset: 0; background: var(--laranja); transform-origin: top; transform: scaleY(0); }
+
+.dica {
+  margin: 4px 0 0; display: inline-flex; gap: 10px; align-items: center;
+  font: 500 10.5px/1 var(--f-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--texto-fraco);
+}
+.dica span { display: inline-block; color: var(--laranja); animation: desce 1.8s var(--ease) infinite; }
+@keyframes desce { 0%, 100% { transform: translateY(-2px); opacity: .5; } 50% { transform: translateY(4px); opacity: 1; } }
+
+/* ---------- telas estreitas ---------- */
+.estreito { --topo-h: 64px; }
+.estreito .marca img { height: 27px; }
+.estreito .pular { padding: 9px 12px; font-size: 10px; letter-spacing: 0.1em; }
+.estreito .topo-acoes .btn-pequeno { padding: 9px 16px; }
+.estreito .titulo { font-size: clamp(36px, 10.6vw, 52px); letter-spacing: -0.045em; max-width: 12ch; }
+.estreito .titulo-hero { font-size: clamp(31px, 9vw, 44px); max-width: 14ch; }
+.estreito .sub { font-size: 15px; max-width: 34ch; }
+.estreito .acoes { gap: 10px; }
+.estreito .acoes .btn { padding: 13px 22px; min-height: 46px; font-size: 14.5px; }
+.estreito .etapas { display: none; }
+
+/* ---------- sem 3D ou com movimento reduzido: hero direto ---------- */
+.sem-3d .abertura, .reduzido .abertura { height: 100vh; height: 100svh; }
+.sem-3d .cena, .sem-3d .linhas, .sem-3d .frentes, .sem-3d .nucleo, .sem-3d .etapas, .sem-3d .dica, .sem-3d .assinatura,
+.sem-3d .pular, .sem-3d .holofote, .sem-3d .ato:not(.hero) { display: none; }
+.sem-3d .palco { background: radial-gradient(ellipse 80% 70% at 50% 45%, #3A3E46 0%, #33363D 45%, #1D1F23 100%); }
+.sem-3d .hero .unidade { opacity: 1 !important; transform: none !important; filter: none !important; }
+.sem-3d .acoes { pointer-events: auto; }
+.sem-3d .hero-estatico { display: block; width: min(56%, 340px); height: auto; margin-top: clamp(12px, 4vh, 40px); opacity: .95; }
+@media (prefers-reduced-motion: reduce) {
+  .dica span, .titulo em { animation: none; }
+}

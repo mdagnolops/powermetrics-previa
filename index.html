@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Grupo PowerMetrics · Ecossistema de crescimento</title>
+  <meta name="description" content="Consultoria, Power BI, aplicativos, inteligência artificial e marketing trabalhando juntos, em cima dos dados reais da sua operação.">
+  <meta name="theme-color" content="#121316">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css?v=10">
+  <script>
+    (function () {
+      var raiz = document.documentElement;
+      raiz.classList.add('js');
+      if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) raiz.classList.add('reduzido');
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      // Se a cena 3D não subir (sem WebGL, CDN bloqueado), mostra o hero estático.
+      setTimeout(function () { if (!window.__cenaPronta) raiz.classList.add('sem-3d'); }, 12000);
+    })();
+  </script>
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    } }
+  </script>
+  <script type="module" src="js/main.js?v=10"></script>
+</head>
+<body>
+  <header class="topo">
+    <a class="marca" href="./" aria-label="Grupo PowerMetrics, início">
+      <img src="assets/powermetrics-logo.png" alt="PowerMetrics" width="700" height="310">
+    </a>
+    <div class="topo-acoes">
+      <button class="pular" type="button" data-pular>Pular abertura</button>
+      <a class="btn btn-escuro btn-pequeno" href="https://powermetrics-dash-6496.web.app/">Entrar</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="abertura" aria-label="O ecossistema PowerMetrics">
+      <div class="palco">
+        <canvas class="cena" aria-hidden="true"></canvas>
+        <div class="holofote" aria-hidden="true"></div>
+        <svg class="linhas" aria-hidden="true"></svg>
+
+        <ol class="frentes" aria-label="As cinco frentes do ecossistema">
+          <li class="frente"><span class="frente-n">01</span><span class="nome-longo">Consultoria</span><span class="nome-curto" aria-hidden="true">Consultoria</span></li>
+          <li class="frente"><span class="frente-n">02</span><span class="nome-longo">Power BI</span><span class="nome-curto" aria-hidden="true">Power BI</span></li>
+          <li class="frente"><span class="frente-n">03</span><span class="nome-longo">Aplicativos</span><span class="nome-curto" aria-hidden="true">Apps</span></li>
+          <li class="frente"><span class="frente-n">04</span><span class="nome-longo">Inteligência Artificial</span><span class="nome-curto" aria-hidden="true">IA</span></li>
+          <li class="frente"><span class="frente-n">05</span><span class="nome-longo">Marketing</span><span class="nome-curto" aria-hidden="true">Marketing</span></li>
+        </ol>
+        <div class="nucleo" aria-hidden="true">Sua empresa</div>
+
+        <!-- Assinatura que sai de dentro do símbolo quando ele se forma -->
+        <p class="assinatura" aria-label="Grupo PowerMetrics, ecossistema de crescimento">
+          <span class="assinatura-lado assinatura-esq" aria-hidden="true"><span>Grupo PowerMetrics</span></span>
+          <span class="assinatura-lado assinatura-dir" aria-hidden="true"><span>Ecossistema de crescimento</span></span>
+        </p>
+
+        <div class="atos">
+          <div class="ato" data-ato="0">
+            <h2 class="titulo">Toda empresa é feita de <em>muitas peças</em>.</h2>
+            <p class="sub">Quando cada uma anda sozinha, o crescimento trava.</p>
+            <p class="dica" aria-hidden="true">Assista ou role para controlar <span>↓</span></p>
+          </div>
+          <div class="ato" data-ato="1">
+            <h2 class="titulo">A gente organiza <em>cada uma delas</em>.</h2>
+            <p class="sub">Cinco frentes trabalhando juntas, em volta do seu negócio.</p>
+          </div>
+          <div class="ato hero" data-ato="2">
+            <h1 class="titulo titulo-hero">Tudo que faz sua empresa crescer, <em>num lugar só</em>.</h1>
+            <div class="acoes">
+              <span class="ima">
+                <a class="btn btn-primario" href="https://wa.me/5554992142970?text=Ol%C3%A1!%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20PowerMetrics.">Agendar diagnóstico</a>
+              </span>
+            </div>
+            <img class="hero-estatico" src="assets/powermetrics-logo.png" alt="" width="700" height="310">
+          </div>
+        </div>
+
+        <div class="etapas" aria-hidden="true">
+          <span class="etapa"><b>01</b><span class="etapa-nome">Empresa</span></span>
+          <span class="etapa"><b>02</b><span class="etapa-nome">Ecossistema</span></span>
+          <span class="etapa"><b>03</b><span class="etapa-nome">Símbolo</span></span>
+          <i class="etapas-barra"><i></i></i>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
