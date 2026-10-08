@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estudo de tipografia · PowerMetrics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&family=Inter+Tight:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=satoshi@400,500,700&f[]=clash-display@500,600,700&f[]=general-sans@400,500,600&display=swap">
+<style>
+:root { --laranja:#F58434; --brasa-1:#FFB36B; --brasa-2:#F58434; --brasa-3:#E2521F; --fundo:#121316; --texto:#F5F2EE; --suave:#C7CDD8; --fraco:#9BA2B0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font-family: Inter, sans-serif; }
+.opcao { min-height: 100vh; padding: 56px 64px; border-bottom: 1px solid rgba(255,255,255,.08); display: grid; gap: 28px; align-content: start;
+  background: radial-gradient(ellipse 70% 60% at 50% 30%, #23252b, #121316 70%); }
+.rotulo { font: 500 12px/1 "IBM Plex Mono", monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--fraco); }
+.rotulo b { color: var(--laranja); font-weight: 500; }
+h1 { margin: 0; font-size: 76px; line-height: .98; max-width: 16ch; }
+h1 em, h2 em { font-style: normal; background: linear-gradient(100deg, var(--brasa-1), var(--brasa-2) 45%, var(--brasa-3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h2 { margin: 0; font-size: 48px; line-height: 1.02; max-width: 20ch; }
+p { margin: 0; max-width: 56ch; font-size: 19px; line-height: 1.55; color: var(--suave); }
+.numeros { display: flex; gap: 56px; }
+.numeros div { display: grid; gap: 6px; }
+.numeros strong { font-size: 64px; line-height: 1; font-variant-numeric: tabular-nums; }
+.numeros span { font-size: 14px; color: var(--fraco); }
+.acoes { display: flex; gap: 14px; align-items: center; }
+/* botão brasa: gradiente quente + realce interno + borda viva (Kinetics · Gradient Border Morph, nas cores da marca) */
+.btn { position: relative; display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 999px; font-size: 16px; text-decoration: none; isolation: isolate; overflow: hidden; }
+.btn-brasa { color: #1B0A02; background: linear-gradient(135deg, var(--brasa-1) 0%, var(--brasa-2) 42%, var(--brasa-3) 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.45), inset 0 -2px 6px rgba(120,30,0,.35), 0 10px 30px -10px rgba(245,132,52,.8), 0 0 0 1px rgba(255,180,110,.35); }
+.btn-vidro { color: var(--texto); background: rgba(255,255,255,.04); box-shadow: inset 0 0 0 1px rgba(255,255,255,.16); backdrop-filter: blur(8px); }
+.btn-vidro::before { content: ""; position: absolute; inset: -60%; z-index: -2; background: conic-gradient(from 0deg, transparent 0 60%, var(--brasa-2) 75%, var(--brasa-1) 82%, transparent 92%); animation: gira 4s linear infinite; }
+.btn-vidro::after { content: ""; position: absolute; inset: 1.5px; z-index: -1; border-radius: inherit; background: #18191d; }
+@keyframes gira { to { transform: rotate(1turn); } }
+.assinatura { display: flex; align-items: center; gap: 28px; margin-top: 8px; }
+.assinatura .lado { display: grid; gap: 6px; }
+.assinatura .esq { text-align: right; }
+.assinatura small { font: 500 11px/1 "IBM Plex Mono", monospace; letter-spacing: .22em; text-transform: uppercase; color: var(--fraco); }
+.assinatura strong { font-size: 40px; line-height: 1; }
+.assinatura .dir strong { background: linear-gradient(100deg, var(--brasa-1), var(--brasa-2) 50%, var(--brasa-3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.chev { width: 46px; height: 90px; background: linear-gradient(160deg, var(--brasa-1), var(--brasa-3)); clip-path: polygon(0 0, 38% 0, 100% 50%, 38% 100%, 0 100%, 62% 50%); }
+
+/* opções */
+.a h1, .a h2, .a strong, .a .btn { font-family: "Space Grotesk"; font-weight: 700; letter-spacing: -.04em; } .a p, .a .numeros span { font-family: Inter; }
+.b h1, .b h2, .b strong { font-family: Archivo; font-stretch: 125%; font-weight: 750; letter-spacing: -.035em; } .b .btn { font-family: Archivo; font-weight: 650; } .b p, .b .numeros span { font-family: Archivo; font-stretch: 100%; }
+.c h1, .c h2, .c strong { font-family: "Cabinet Grotesk"; font-weight: 800; letter-spacing: -.035em; } .c .btn { font-family: "Cabinet Grotesk"; font-weight: 700; } .c p, .c .numeros span { font-family: Satoshi; }
+.d h1, .d h2, .d strong { font-family: "Bricolage Grotesque"; font-weight: 700; font-variation-settings: "opsz" 96; letter-spacing: -.045em; } .d .btn { font-family: "Bricolage Grotesque"; font-weight: 600; } .d p, .d .numeros span { font-family: "Inter Tight"; }
+.e h1, .e h2, .e strong { font-family: "Clash Display"; font-weight: 600; letter-spacing: -.02em; } .e .btn { font-family: "General Sans"; font-weight: 600; } .e p, .e .numeros span { font-family: "General Sans"; }
+</style>
+</head>
+<body>
+<section class="opcao a" id="a"><span class="rotulo"><b>A</b> · atual · Space Grotesk + Inter</span>
+<h1>Tudo que faz sua empresa crescer, <em>num lugar só</em>.</h1><h2>Um time só pra <em>empresa inteira</em>.</h2>
+<p>Não precisa contratar tudo de uma vez. Mas quando precisar de outra frente, a gente já conhece a sua empresa.</p>
+<div class="numeros"><div><strong>+100</strong><span>empresas atendidas</span></div><div><strong>+300</strong><span>painéis criados</span></div></div>
+<div class="acoes"><a class="btn btn-brasa">Agendar diagnóstico</a><a class="btn btn-vidro">Ver as frentes</a></div>
+<div class="assinatura"><div class="lado esq"><small>Grupo</small><strong>PowerMetrics</strong></div><div class="chev"></div><div class="lado dir"><small>Ecossistema de</small><strong>crescimento</strong></div></div></section>
+
+<section class="opcao b" id="b"><span class="rotulo"><b>B</b> · Archivo expandida + Archivo</span>
+<h1>Tudo que faz sua empresa crescer, <em>num lugar só</em>.</h1><h2>Um time só pra <em>empresa inteira</em>.</h2>
+<p>Não precisa contratar tudo de uma vez. Mas quando precisar de outra frente, a gente já conhece a sua empresa.</p>
+<div class="numeros"><div><strong>+100</strong><span>empresas atendidas</span></div><div><strong>+300</strong><span>painéis criados</span></div></div>
+<div class="acoes"><a class="btn btn-brasa">Agendar diagnóstico</a><a class="btn btn-vidro">Ver as frentes</a></div>
+<div class="assinatura"><div class="lado esq"><small>Grupo</small><strong>PowerMetrics</strong></div><div class="chev"></div><div class="lado dir"><small>Ecossistema de</small><strong>crescimento</strong></div></div></section>
+
+<section class="opcao c" id="c"><span class="rotulo"><b>C</b> · Cabinet Grotesk + Satoshi</span>
+<h1>Tudo que faz sua empresa crescer, <em>num lugar só</em>.</h1><h2>Um time só pra <em>empresa inteira</em>.</h2>
+<p>Não precisa contratar tudo de uma vez. Mas quando precisar de outra frente, a gente já conhece a sua empresa.</p>
+<div class="numeros"><div><strong>+100</strong><span>empresas atendidas</span></div><div><strong>+300</strong><span>painéis criados</span></div></div>
+<div class="acoes"><a class="btn btn-brasa">Agendar diagnóstico</a><a class="btn btn-vidro">Ver as frentes</a></div>
+<div class="assinatura"><div class="lado esq"><small>Grupo</small><strong>PowerMetrics</strong></div><div class="chev"></div><div class="lado dir"><small>Ecossistema de</small><strong>crescimento</strong></div></div></section>
+
+<section class="opcao d" id="d"><span class="rotulo"><b>D</b> · Bricolage Grotesque + Inter Tight</span>
+<h1>Tudo que faz sua empresa crescer, <em>num lugar só</em>.</h1><h2>Um time só pra <em>empresa inteira</em>.</h2>
+<p>Não precisa contratar tudo de uma vez. Mas quando precisar de outra frente, a gente já conhece a sua empresa.</p>
+<div class="numeros"><div><strong>+100</strong><span>empresas atendidas</span></div><div><strong>+300</strong><span>painéis criados</span></div></div>
+<div class="acoes"><a class="btn btn-brasa">Agendar diagnóstico</a><a class="btn btn-vidro">Ver as frentes</a></div>
+<div class="assinatura"><div class="lado esq"><small>Grupo</small><strong>PowerMetrics</strong></div><div class="chev"></div><div class="lado dir"><small>Ecossistema de</small><strong>crescimento</strong></div></div></section>
+
+<section class="opcao e" id="e"><span class="rotulo"><b>E</b> · Clash Display + General Sans</span>
+<h1>Tudo que faz sua empresa crescer, <em>num lugar só</em>.</h1><h2>Um time só pra <em>empresa inteira</em>.</h2>
+<p>Não precisa contratar tudo de uma vez. Mas quando precisar de outra frente, a gente já conhece a sua empresa.</p>
+<div class="numeros"><div><strong>+100</strong><span>empresas atendidas</span></div><div><strong>+300</strong><span>painéis criados</span></div></div>
+<div class="acoes"><a class="btn btn-brasa">Agendar diagnóstico</a><a class="btn btn-vidro">Ver as frentes</a></div>
+<div class="assinatura"><div class="lado esq"><small>Grupo</small><strong>PowerMetrics</strong></div><div class="chev"></div><div class="lado dir"><small>Ecossistema de</small><strong>crescimento</strong></div></div></section>
+</body>
+</html>

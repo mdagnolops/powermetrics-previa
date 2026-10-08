@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#121316">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css?v=14">
+  <script>
+    (function () {
+      var raiz = document.documentElement;
+      raiz.classList.add('js');
+      if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) raiz.classList.add('reduzido');
+    })();
+  </script>
+  <script src="js/site.js?v=14" defer></script>
+
+  <title>Grupo PowerMetrics · Ecossistema de crescimento</title>
+  <meta name="description" content="Consultoria, Power BI, aplicativos, inteligência artificial e marketing num time só. Grupo PowerMetrics, Marau (RS).">
+  <script>
+    (function () {
+      var raiz = document.documentElement;
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      // Se a cena 3D não subir (sem WebGL, CDN bloqueado), mostra o hero estático.
+      setTimeout(function () { if (!window.__cenaPronta) raiz.classList.add('sem-3d'); }, 12000);
+    })();
+  </script>
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    } }
+  </script>
+  <script type="module" src="js/main.js?v=14"></script>
+</head>
+<body id="inicio" class="pagina-inicio">
+  <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a>
+  <header class="topo">
+    <a class="marca" href="./" aria-label="Grupo PowerMetrics, início">
+      <img src="assets/powermetrics-logo.png" alt="PowerMetrics" width="700" height="310">
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <div class="nav-item tem-sub">
+        <button class="nav-link" type="button" aria-expanded="false" aria-controls="sub-frentes" data-sub>
+          Frentes <i class="seta-baixo" aria-hidden="true"></i>
+        </button>
+        <div class="submenu" id="sub-frentes">
+          <a class="sub-item" href="#frente-01"><b>01</b><span><strong>Consultoria</strong><small>Organizar a casa</small></span></a>
+          <a class="sub-item" href="#frente-02"><b>02</b><span><strong>Power BI</strong><small>Enxergar os números</small></span></a>
+          <a class="sub-item" href="#frente-03"><b>03</b><span><strong>Aplicativos</strong><small>Conectar a rotina</small></span></a>
+          <a class="sub-item" href="#frente-04"><b>04</b><span><strong>Inteligência Artificial</strong><small>Automatizar o repetitivo</small></span></a>
+          <a class="sub-item" href="#frente-05"><b>05</b><span><strong>Marketing</strong><small>Crescer em vendas</small></span></a>
+        </div>
+      </div>
+      <a class="nav-link" href="#na-pratica">Na prática</a>
+      <a class="nav-link" href="quem-somos.html" data-pagina="quem-somos">Quem somos</a>
+      <a class="nav-link" href="blog.html" data-pagina="blog">Conteúdo</a>
+    </nav>
+
+    <div class="topo-acoes">
+      <button class="pular" type="button" data-pular>Pular abertura</button>
+      <a class="btn btn-fantasma btn-pequeno topo-entrar" href="https://powermetrics-dash-6496.web.app/">Entrar</a>
+      <a class="btn btn-brasa btn-pequeno topo-cta" href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20PowerMetrics.">Agendar diagnóstico</a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-celular" aria-label="Abrir menu" data-menu>
+        <i></i><i></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu-celular" id="menu-celular" hidden>
+    <nav aria-label="Menu">
+      <p class="olho">Frentes</p>
+      <a href="#frente-01"><b>01</b>Consultoria</a>
+      <a href="#frente-02"><b>02</b>Power BI</a>
+      <a href="#frente-03"><b>03</b>Aplicativos</a>
+      <a href="#frente-04"><b>04</b>Inteligência Artificial</a>
+      <a href="#frente-05"><b>05</b>Marketing</a>
+      <p class="olho">Empresa</p>
+      <a href="#na-pratica">Na prática</a>
+      <a href="quem-somos.html">Quem somos</a>
+      <a href="blog.html">Conteúdo</a>
+      <a href="https://powermetrics-dash-6496.web.app/">Entrar no portal do cliente</a>
+    </nav>
+    <a class="btn btn-brasa btn-grande" href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20PowerMetrics.">Agendar diagnóstico <svg class="seta-px" viewBox="0 0 9 15" aria-hidden="true"><rect x="0" y="0" width="2.7" height="2.7"/><rect x="3" y="3" width="2.7" height="2.7"/><rect x="6" y="6" width="2.7" height="2.7"/><rect x="3" y="9" width="2.7" height="2.7"/><rect x="0" y="12" width="2.7" height="2.7"/></svg></a>
+  </div>
+
+
+  <main id="conteudo">
+    <!-- ============ abertura + hero (cena 3D) ============ -->
+    <section class="abertura" aria-label="O ecossistema PowerMetrics">
+      <div class="palco">
+        <canvas class="cena" aria-hidden="true"></canvas>
+        <div class="carregando" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="holofote" aria-hidden="true"></div>
+        <svg class="linhas" aria-hidden="true"></svg>
+
+        <ol class="frentes" aria-label="As cinco frentes do ecossistema">
+          <li class="frente"><span class="frente-n">01</span><span class="nome-longo">Consultoria</span><span class="nome-curto" aria-hidden="true">Consultoria</span></li>
+          <li class="frente"><span class="frente-n">02</span><span class="nome-longo">Power BI</span><span class="nome-curto" aria-hidden="true">Power BI</span></li>
+          <li class="frente"><span class="frente-n">03</span><span class="nome-longo">Aplicativos</span><span class="nome-curto" aria-hidden="true">Apps</span></li>
+          <li class="frente"><span class="frente-n">04</span><span class="nome-longo">Inteligência Artificial</span><span class="nome-curto" aria-hidden="true">IA</span></li>
+          <li class="frente"><span class="frente-n">05</span><span class="nome-longo">Marketing</span><span class="nome-curto" aria-hidden="true">Marketing</span></li>
+        </ol>
+        <div class="nucleo" aria-hidden="true">Sua empresa</div>
+
+        <!-- Assinatura em dois níveis, que sai de dentro do símbolo quando ele se forma -->
+        <p class="assinatura" aria-label="Grupo PowerMetrics, ecossistema de crescimento">
+          <span class="assinatura-lado assinatura-esq" aria-hidden="true"><span><small>Grupo</small><strong>PowerMetrics</strong></span></span>
+          <span class="assinatura-lado assinatura-dir" aria-hidden="true"><span><small>Ecossistema de</small><strong>crescimento</strong></span></span>
+        </p>
+
+        <div class="atos">
+          <div class="ato" data-ato="0">
+            <h2 class="titulo">Toda empresa é feita de <em>muitas peças<span class="ponto">.</span></em></h2>
+            <p class="sub">Quando cada uma anda pra um lado, quem segura tudo é você.</p>
+            <p class="dica" aria-hidden="true">Assista ou role pra controlar <span>↓</span></p>
+          </div>
+          <div class="ato" data-ato="1">
+            <h2 class="titulo">A gente põe <em>cada peça no lugar<span class="ponto">.</span></em></h2>
+            <p class="sub">Cinco frentes e um time só, trabalhando em volta da sua empresa.</p>
+          </div>
+          <div class="ato hero" data-ato="2">
+            <h1 class="titulo titulo-hero">Tudo que faz sua empresa crescer, <em>num lugar só<span class="ponto">.</span></em></h1>
+            <div class="acoes">
+              <span class="ima"><a class="btn btn-brasa btn-grande" href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20PowerMetrics.">Agendar diagnóstico <svg class="seta-px" viewBox="0 0 9 15" aria-hidden="true"><rect x="0" y="0" width="2.7" height="2.7"/><rect x="3" y="3" width="2.7" height="2.7"/><rect x="6" y="6" width="2.7" height="2.7"/><rect x="3" y="9" width="2.7" height="2.7"/><rect x="0" y="12" width="2.7" height="2.7"/></svg></a></span>
+              <a class="btn btn-vidro btn-grande" href="#frentes">Ver as frentes</a>
+            </div>
+            <img class="hero-estatico" src="assets/powermetrics-logo.png" alt="" width="700" height="310">
+          </div>
+        </div>
+
+        <div class="etapas" aria-hidden="true">
+          <span class="etapa"><b>01</b><span class="etapa-nome">Empresa</span></span>
+          <span class="etapa"><b>02</b><span class="etapa-nome">Ecossistema</span></span>
+          <span class="etapa"><b>03</b><span class="etapa-nome">Símbolo</span></span>
+          <i class="etapas-barra"><i></i></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ clientes e números ============ -->
+    <section class="secao clientes" aria-labelledby="clientes-titulo">
+      <div class="conteiner">
+        <p class="olho olho-centro" id="clientes-titulo">Empresas que já trabalharam com a gente</p>
+      </div>
+      <div class="trilhos" aria-label="Logos de clientes" data-revelar>
+        <div class="trilho"><ul class="trilho-lista"><li><img src="assets/clientes/logo-06.png" alt="" style="--h:43px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-43.png" alt="" style="--h:30px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-04.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-38.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-50.png" alt="" style="--h:47px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-31.png" alt="" style="--h:31px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-27.png" alt="" style="--h:41px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-10.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/70-anos-marau.png" alt="70 anos de Marau" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-15.png" alt="" style="--h:33px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-21.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-05.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-02.png" alt="" style="--h:36px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-26.png" alt="" style="--h:50px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/rota-salamarias.png" alt="Rota das Salamarias" style="--h:47px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-51.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-17.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-37.png" alt="" style="--h:48px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-18.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-29.png" alt="" style="--h:34px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-14.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-45.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-35.png" alt="" style="--h:42px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/mente-corp.png" alt="Mente Corp" style="--h:55px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-44.png" alt="" style="--h:27px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/perin-casa-conceito.png" alt="Perin Casa Conceito" style="--h:44px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-39.png" alt="" style="--h:38px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-11.png" alt="" style="--h:51px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-28.png" alt="" style="--h:33px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-52.png" alt="" style="--h:38px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-06.png" alt="" style="--h:43px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-43.png" alt="" style="--h:30px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-04.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-38.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-50.png" alt="" style="--h:47px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-31.png" alt="" style="--h:31px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-27.png" alt="" style="--h:41px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-10.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/70-anos-marau.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-15.png" alt="" style="--h:33px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-21.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-05.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-02.png" alt="" style="--h:36px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-26.png" alt="" style="--h:50px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/rota-salamarias.png" alt="" style="--h:47px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-51.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-17.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-37.png" alt="" style="--h:48px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-18.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-29.png" alt="" style="--h:34px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-14.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-45.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-35.png" alt="" style="--h:42px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/mente-corp.png" alt="" style="--h:55px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-44.png" alt="" style="--h:27px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/perin-casa-conceito.png" alt="" style="--h:44px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-39.png" alt="" style="--h:38px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-11.png" alt="" style="--h:51px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-28.png" alt="" style="--h:33px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-52.png" alt="" style="--h:38px" loading="lazy" decoding="async"></li></ul></div>
+        <div class="trilho trilho-volta"><ul class="trilho-lista"><li><img src="assets/clientes/cantina-da-terra.png" alt="Cantina da Terra" style="--h:55px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/origens-salamaria.png" alt="Origens Salamaria" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-49.png" alt="" style="--h:46px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-08.png" alt="" style="--h:27px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-01.png" alt="" style="--h:32px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-47.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-41.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-34.png" alt="" style="--h:31px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-42.png" alt="" style="--h:33px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-09.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/malwee.png" alt="Malwee" style="--h:27px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-24.png" alt="" style="--h:38px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-25.png" alt="" style="--h:45px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/celebrare.png" alt="Celebrare" style="--h:43px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/cantina-manfroi.png" alt="Cantina Manfroi" style="--h:56px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-07.png" alt="" style="--h:54px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-30.png" alt="" style="--h:43px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/marau.png" alt="Marau" style="--h:39px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-36.png" alt="" style="--h:51px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-19.png" alt="" style="--h:34px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/festa-italiana.png" alt="Festa Italiana" style="--h:40px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-32.png" alt="" style="--h:53px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-53.png" alt="" style="--h:45px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/casca.png" alt="Casca" style="--h:43px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/casa-camera.png" alt="Casa Camera" style="--h:40px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-40.png" alt="" style="--h:53px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-22.png" alt="" style="--h:44px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-03.png" alt="" style="--h:48px" loading="lazy" decoding="async"></li><li><img src="assets/clientes/logo-16.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/cantina-da-terra.png" alt="" style="--h:55px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/origens-salamaria.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-49.png" alt="" style="--h:46px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-08.png" alt="" style="--h:27px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-01.png" alt="" style="--h:32px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-47.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-41.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-34.png" alt="" style="--h:31px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-42.png" alt="" style="--h:33px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-09.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/malwee.png" alt="" style="--h:27px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-24.png" alt="" style="--h:38px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-25.png" alt="" style="--h:45px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/celebrare.png" alt="" style="--h:43px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/cantina-manfroi.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-07.png" alt="" style="--h:54px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-30.png" alt="" style="--h:43px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/marau.png" alt="" style="--h:39px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-36.png" alt="" style="--h:51px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-19.png" alt="" style="--h:34px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/festa-italiana.png" alt="" style="--h:40px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-32.png" alt="" style="--h:53px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-53.png" alt="" style="--h:45px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/casca.png" alt="" style="--h:43px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/casa-camera.png" alt="" style="--h:40px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-40.png" alt="" style="--h:53px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-22.png" alt="" style="--h:44px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-03.png" alt="" style="--h:48px" loading="lazy" decoding="async"></li><li aria-hidden="true"><img src="assets/clientes/logo-16.png" alt="" style="--h:56px" loading="lazy" decoding="async"></li></ul></div>
+      </div>
+      <div class="conteiner">
+        <dl class="numeros" data-revelar-grupo>
+          <div class="numero" data-revelar><dt>empresas atendidas</dt><dd><span class="mais">+</span><span data-contar="100">100</span></dd></div>
+          <div class="numero" data-revelar><dt>painéis criados</dt><dd><span class="mais">+</span><span data-contar="300">300</span></dd></div>
+          <div class="numero" data-revelar><dt>frentes num time só</dt><dd><span data-contar="5">5</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ o que o dono fala (a frase no meio da tela acende) ============ -->
+    <section class="secao dores" id="dores" aria-labelledby="dores-titulo">
+      <div class="conteiner">
+        <div class="dores-cabeca" data-revelar>
+          <p class="olho">Na conversa com o dono</p>
+          <h2 class="titulo-secao" id="dores-titulo">A gente escuta isso <em>toda semana</em>.</h2>
+        </div>
+        <ul class="frases" data-foco>
+          <li><a class="frase" href="#frente-01">
+            <span class="cubos" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <q>Tudo passa por mim. Se eu tiro uma semana de férias, a empresa para.</q>
+            <span class="frase-frente"><b>01</b>Consultoria<i aria-hidden="true">→</i></span>
+          </a></li>
+          <li><a class="frase" href="#frente-02">
+            <span class="cubos" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <q>Sei quanto vendi. Não sei quanto sobrou.</q>
+            <span class="frase-frente"><b>02</b>Power BI<i aria-hidden="true">→</i></span>
+          </a></li>
+          <li><a class="frase" href="#frente-03">
+            <span class="cubos" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <q>Pago um sistema caro e mesmo assim tudo acaba numa planilha.</q>
+            <span class="frase-frente"><b>03</b>Aplicativos<i aria-hidden="true">→</i></span>
+          </a></li>
+          <li><a class="frase" href="#frente-04">
+            <span class="cubos" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <q>O pessoal perde a manhã respondendo as mesmas perguntas no WhatsApp.</q>
+            <span class="frase-frente"><b>04</b>IA<i aria-hidden="true">→</i></span>
+          </a></li>
+          <li><a class="frase" href="#frente-05">
+            <span class="cubos" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <q>Posto todo dia e o telefone não toca.</q>
+            <span class="frase-frente"><b>05</b>Marketing<i aria-hidden="true">→</i></span>
+          </a></li>
+        </ul>
+        <p class="dores-fecho" data-revelar>Se alguma dessas frases já saiu da sua boca, a gente sabe por onde começar.</p>
+      </div>
+    </section>
+
+    <!-- ============ as cinco frentes: o anel vira um seletor que gira ============ -->
+    <section class="secao frentes-secao" id="frentes" aria-labelledby="frentes-titulo">
+      <div class="conteiner cabeca-centro" data-revelar>
+        <p class="olho">As cinco frentes</p>
+        <h2 class="titulo-secao" id="frentes-titulo">Um time só pra <em>empresa inteira</em>.</h2>
+        <p class="apoio">Não precisa contratar tudo de uma vez. Mas quando precisar de outra frente, a gente já conhece a sua empresa.</p>
+      </div>
+
+      <div class="dial" data-dial data-revelar>
+        <div class="dial-roda">
+          <svg class="anel" viewBox="0 0 320 320" role="img" aria-label="As cinco frentes"><g class="arco" data-frente="01"><title>01 Consultoria</title><path class="halo" d="M102.79 56.79A118 118 0 0 1 217.21 56.79"/><path class="celulas" d="M109.58 69.04A104 104 0 0 1 210.42 69.04" stroke-dasharray="0 1.71 9.74 1.71"/><path class="celulas" d="M102.79 56.79A118 118 0 0 1 217.21 56.79" stroke-dasharray="0 1.73 9.82 1.73"/><path class="celulas" d="M96.01 44.55A132 132 0 0 1 223.99 44.55" stroke-dasharray="0 1.74 9.89 1.74"/></g><g class="arco" data-frente="02"><title>02 Power BI</title><path class="halo" d="M240.48 73.70A118 118 0 0 1 275.83 182.52"/><path class="celulas" d="M230.93 83.94A104 104 0 0 1 262.09 179.84" stroke-dasharray="0 1.71 9.74 1.71"/><path class="celulas" d="M240.48 73.70A118 118 0 0 1 275.83 182.52" stroke-dasharray="0 1.73 9.82 1.73"/><path class="celulas" d="M250.02 63.46A132 132 0 0 1 289.57 185.19" stroke-dasharray="0 1.74 9.89 1.74"/></g><g class="arco" data-frente="03"><title>03 Aplicativos</title><path class="halo" d="M266.94 209.87A118 118 0 0 1 174.38 277.12"/><path class="celulas" d="M254.26 203.95A104 104 0 0 1 172.67 263.22" stroke-dasharray="0 1.71 9.74 1.71"/><path class="celulas" d="M266.94 209.87A118 118 0 0 1 174.38 277.12" stroke-dasharray="0 1.73 9.82 1.73"/><path class="celulas" d="M279.63 215.79A132 132 0 0 1 176.09 291.02" stroke-dasharray="0 1.74 9.89 1.74"/></g><g class="arco" data-frente="04"><title>04 Inteligência Artificial</title><path class="halo" d="M145.62 277.12A118 118 0 0 1 53.06 209.87"/><path class="celulas" d="M147.33 263.22A104 104 0 0 1 65.74 203.95" stroke-dasharray="0 1.71 9.74 1.71"/><path class="celulas" d="M145.62 277.12A118 118 0 0 1 53.06 209.87" stroke-dasharray="0 1.73 9.82 1.73"/><path class="celulas" d="M143.91 291.02A132 132 0 0 1 40.37 215.79" stroke-dasharray="0 1.74 9.89 1.74"/></g><g class="arco" data-frente="05"><title>05 Marketing</title><path class="halo" d="M44.17 182.52A118 118 0 0 1 79.52 73.70"/><path class="celulas" d="M57.91 179.84A104 104 0 0 1 89.07 83.94" stroke-dasharray="0 1.71 9.74 1.71"/><path class="celulas" d="M44.17 182.52A118 118 0 0 1 79.52 73.70" stroke-dasharray="0 1.73 9.82 1.73"/><path class="celulas" d="M30.43 185.19A132 132 0 0 1 69.98 63.46" stroke-dasharray="0 1.74 9.89 1.74"/></g></svg>
+          <div class="dial-rotulos" role="tablist" aria-label="As cinco frentes">
+            <button class="dial-rotulo" role="tab" id="aba-01" aria-controls="painel-01" aria-selected="true" data-frente="01" data-verbo="Organizar" style="--a:-90deg"><b>01</b><span>Consultoria</span></button>
+            <button class="dial-rotulo" role="tab" id="aba-02" aria-controls="painel-02" aria-selected="false" tabindex="-1" data-frente="02" data-verbo="Enxergar" style="--a:-18deg"><b>02</b><span>Power BI</span></button>
+            <button class="dial-rotulo" role="tab" id="aba-03" aria-controls="painel-03" aria-selected="false" tabindex="-1" data-frente="03" data-verbo="Conectar" style="--a:54deg"><b>03</b><span class="nome-longo">Aplicativos</span><span class="nome-curto" aria-hidden="true">Apps</span></button>
+            <button class="dial-rotulo" role="tab" id="aba-04" aria-controls="painel-04" aria-selected="false" tabindex="-1" data-frente="04" data-verbo="Automatizar" style="--a:126deg"><b>04</b><span class="nome-longo">Inteligência Artificial</span><span class="nome-curto" aria-hidden="true">IA</span></button>
+            <button class="dial-rotulo" role="tab" id="aba-05" aria-controls="painel-05" aria-selected="false" tabindex="-1" data-frente="05" data-verbo="Crescer" style="--a:198deg"><b>05</b><span>Marketing</span></button>
+          </div>
+        </div>
+        <div class="dial-centro" aria-hidden="true">
+          <span class="dial-n">01</span>
+          <strong class="dial-verbo">Organizar</strong>
+        </div>
+      </div>
+      <div class="dial-fio" aria-hidden="true"><i></i></div>
+
+      <div class="conteiner fichas">
+        <article class="ficha" role="tabpanel" id="painel-01" aria-labelledby="aba-01" tabindex="0">
+          <p class="ficha-olho"><span><b>01</b>Consultoria</span><span>Organizar</span></p>
+          <h3>Arrumar a casa antes de acelerar.</h3>
+          <p class="ficha-texto">A gente senta com você e com quem toca cada setor, entende como o trabalho anda de verdade e organiza o que mexe no caixa e na margem. O objetivo é a empresa andar sem depender de você pra tudo.</p>
+          <ul class="ficha-celulas">
+            <li>Diagnóstico de financeiro, vendas, compras, estoque, produção e RH</li>
+            <li>Processos claros, com responsável e rotina em cada setor</li>
+            <li>Indicadores pra acompanhar o que foi combinado</li>
+          </ul>
+          <a class="link-seta" href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20Consultoria%20com%20a%20PowerMetrics.">Conversar sobre consultoria <i aria-hidden="true">→</i></a>
+        </article>
+
+        <article class="ficha" role="tabpanel" id="painel-02" aria-labelledby="aba-02" tabindex="0" hidden>
+          <p class="ficha-olho"><span><b>02</b>Power BI</span><span>Enxergar</span></p>
+          <h3>Seus números num painel que você entende.</h3>
+          <p class="ficha-texto">Os dados do sistema, das planilhas e do financeiro num lugar só, atualizados sem ninguém montar relatório. Você abre no celular e vê o que vendeu, quanto sobrou e onde a margem está escapando.</p>
+          <ul class="ficha-celulas">
+            <li>DRE gerencial, despesas e lucro</li>
+            <li>Vendas por valor, quantidade, região e produto</li>
+            <li>Giro de estoque e indicadores de cada setor</li>
+          </ul>
+          <a class="link-seta" href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20Power%20BI%20com%20a%20PowerMetrics.">Conversar sobre Power BI <i aria-hidden="true">→</i></a>
+        </article>
+
+        <article class="ficha" role="tabpanel" id="painel-03" aria-labelledby="aba-03" tabindex="0" hidden>
+          <p class="ficha-olho"><span><b>03</b>Aplicativos</span><span>Conectar</span></p>
+          <h3>Quando o sistema não resolve, a gente constrói o que falta.</h3>
+          <p class="ficha-texto">Todo sistema pronto deixa um buraco na rotina, e o buraco vira planilha, papel ou mensagem no WhatsApp. A gente desenvolve o que falta e liga no que você já usa. Antes de começar, mostra quanto custa e quanto volta.</p>
+          <ul class="ficha-celulas">
+            <li>Avaliação da rotina e do retorno antes de desenvolver</li>
+            <li>Aplicativos sob medida pra equipe, no celular ou no computador</li>
+            <li>Integração com o sistema e com os painéis</li>
+          </ul>
+          <a class="link-seta" href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20Aplicativos%20com%20a%20PowerMetrics.">Conversar sobre aplicativos <i aria-hidden="true">→</i></a>
+        </article>
+
+        <article class="ficha" role="tabpanel" id="painel-04" aria-labelledby="aba-04" tabindex="0" hidden>
+          <p class="ficha-olho"><span><b>04</b>Inteligência Artificial</span><span>Automatizar</span></p>
+          <h3>Tirar da equipe o trabalho repetitivo.</h3>
+          <p class="ficha-texto">Responder a mesma pergunta no WhatsApp, conferir nota, montar o relatório de toda segunda. A IA faz o repetitivo e chama alguém quando precisa. A equipe fica com o que precisa de gente.</p>
+          <ul class="ficha-celulas">
+            <li>Atendimento com IA no WhatsApp</li>
+            <li>Automação de rotinas, conferências e relatórios</li>
+            <li>Agentes de IA ligados ao sistema da empresa</li>
+          </ul>
+          <a class="link-seta" href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20Intelig%C3%AAncia%20Artificial%20com%20a%20PowerMetrics.">Conversar sobre IA <i aria-hidden="true">→</i></a>
+        </article>
+
+        <article class="ficha" role="tabpanel" id="painel-05" aria-labelledby="aba-05" tabindex="0" hidden>
+          <p class="ficha-olho"><span><b>05</b>Marketing</span><span>Crescer</span></p>
+          <h3>Marketing que vira venda. E que fica com você.</h3>
+          <p class="ficha-texto">Nos primeiros quatro meses, a gente toca o seu marketing. Ao mesmo tempo, monta a estrutura pra uma pessoa da sua equipe seguir sozinha: IA pra produzir, ferramentas configuradas e manual de cada rotina.</p>
+          <div class="bpo">
+            <div class="bpo-meses" aria-hidden="true"><i>Mês 1</i><i>Mês 2</i><i>Mês 3</i><i>Mês 4</i><i class="bpo-depois">Depois</i></div>
+            <div class="bpo-fases">
+              <p><b>A gente toca</b>Estratégia, conteúdo, tráfego pago e funil, enquanto prepara a passagem.</p>
+              <p><b>Sua equipe toca</b>Uma pessoa da casa, com IA, ferramentas e manuais.</p>
+            </div>
+          </div>
+          <a class="link-seta" href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20Marketing%20com%20a%20PowerMetrics.">Conversar sobre marketing <i aria-hidden="true">→</i></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ na prática: esteira horizontal guiada pela rolagem ============ -->
+    <section class="pratica" id="na-pratica" aria-labelledby="pratica-titulo">
+      <div class="pratica-palco">
+        <div class="conteiner pratica-topo">
+          <div class="pratica-cabeca">
+            <p class="olho">Na prática <span class="selo">Exemplo ilustrativo</span></p>
+            <h2 class="titulo-secao" id="pratica-titulo">Uma frente <em>puxa a outra</em>.</h2>
+          </div>
+          <ol class="pratica-nos" aria-hidden="true">
+            <li><b>01</b>Consultoria</li>
+            <li><b>02</b>Power BI</li>
+            <li><b>03</b>Apps</li>
+            <li><b>04</b>IA</li>
+            <li><b>05</b>Marketing</li>
+          </ol>
+        </div>
+
+        <div class="esteira-janela">
+          <ol class="esteira">
+            <li class="estacao estacao-abre">
+              <p class="estacao-abre-texto">Numa distribuidora de alimentos, o caminho costuma ser este.</p>
+              <p class="estacao-abre-nota">Empresa e números de exemplo</p>
+            </li>
+            <li class="elo" aria-hidden="true"><i></i></li>
+
+            <li class="estacao" data-frente="01">
+              <div class="estacao-visual">
+                <div class="maquete maquete-lista" aria-hidden="true">
+                  <div class="maq-topo"><span class="maq-titulo">Diagnóstico · Comercial</span><span class="maq-filtro">Semana 2</span></div>
+                  <ul class="checklist">
+                    <li class="ok">Funil de vendas mapeado</li>
+                    <li class="ok">Tabela de preço revisada</li>
+                    <li class="ok">Meta por vendedor</li>
+                    <li class="alerta">Margem por produto <em>ninguém sabe</em></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="estacao-legenda">
+                <p class="passo-frente"><b>01</b>Consultoria</p>
+                <h3>A consultoria organiza o comercial.</h3>
+                <p>E aparece a pergunta que ninguém sabia responder: qual produto deixa lucro de verdade?</p>
+              </div>
+            </li>
+            <li class="elo" aria-hidden="true"><i></i><span>puxa</span></li>
+
+            <li class="estacao" data-frente="02">
+              <div class="estacao-visual">
+                <div class="maquete maquete-painel" aria-hidden="true">
+                  <div class="maq-topo"><span class="maq-titulo">Margem por produto</span><span class="maq-filtro">Set/2026 ▾</span></div>
+                  <div class="kpis">
+                    <div class="kpi"><small>Faturamento</small><strong>R$ 1,24 mi</strong><em class="sobe">+8%</em></div>
+                    <div class="kpi"><small>Margem média</small><strong>21,3%</strong><em class="desce">−1,2 p.p.</em></div>
+                    <div class="kpi"><small>Pedidos</small><strong>1.312</strong><em class="sobe">+5%</em></div>
+                  </div>
+                  <div class="barras">
+                    <div class="barra" style="--v:.18"><span>Açúcar 5 kg</span><i></i><b>6%</b><mark>mais vendido</mark></div>
+                    <div class="barra" style="--v:.35"><span>Arroz 5 kg</span><i></i><b>12%</b></div>
+                    <div class="barra" style="--v:.53"><span>Farinha 1 kg</span><i></i><b>18%</b></div>
+                    <div class="barra destaque" style="--v:1"><span>Café torrado 500 g</span><i></i><b>34%</b><mark>maior margem</mark></div>
+                  </div>
+                </div>
+              </div>
+              <div class="estacao-legenda">
+                <p class="passo-frente"><b>02</b>Power BI</p>
+                <h3>O painel responde.</h3>
+                <p>O produto que mais vende é o que menos deixa margem. E o café torrado, que quase ninguém oferece, é o que mais deixa.</p>
+              </div>
+            </li>
+            <li class="elo" aria-hidden="true"><i></i><span>puxa</span></li>
+
+            <li class="estacao" data-frente="03">
+              <div class="estacao-visual">
+                <div class="maquete-celular" aria-hidden="true">
+                  <div class="cel-tela">
+                    <div class="cel-status"><span>9:41</span><span class="cel-sinal"><i></i><i></i><i></i></span></div>
+                    <div class="cel-cabeca"><small>Novo pedido</small><strong>Mercado do Bairro</strong></div>
+                    <p class="cel-dica"><b>Dica</b>Ofereça café torrado: margem de 34%</p>
+                    <ul class="cel-itens">
+                      <li><span>Café torrado 500 g<em class="m-alta">margem alta</em></span><b>24 cx</b></li>
+                      <li><span>Açúcar 5 kg<em class="m-baixa">margem baixa</em></span><b>40 fd</b></li>
+                    </ul>
+                    <span class="cel-botao">Enviar pedido</span>
+                  </div>
+                </div>
+              </div>
+              <div class="estacao-legenda">
+                <p class="passo-frente"><b>03</b>Aplicativos</p>
+                <h3>O vendedor vê a margem na hora do pedido.</h3>
+                <p>O app mostra o que vale a pena oferecer e manda o pedido direto pro sistema. Sem papel e sem digitar de novo no fim do dia.</p>
+              </div>
+            </li>
+            <li class="elo" aria-hidden="true"><i></i><span>puxa</span></li>
+
+            <li class="estacao" data-frente="04">
+              <div class="estacao-visual">
+                <div class="maquete maquete-registro" aria-hidden="true">
+                  <div class="maq-topo"><span class="maq-titulo">Rotina de compras</span><span class="status"><i></i>Rodando</span></div>
+                  <ol class="registro">
+                    <li><time>06:00</time>Conferiu o estoque de 214 itens</li>
+                    <li><time>06:01</time>Café torrado 500 g cobre só 6 dias</li>
+                    <li><time>06:01</time>Gerou o pedido de compra de 40 caixas</li>
+                    <li class="destaque"><time>06:02</time>Mandou pro comprador aprovar no WhatsApp</li>
+                    <li class="feito"><time>06:14</time>Aprovado. Pedido lançado no sistema ✓</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="estacao-legenda">
+                <p class="passo-frente"><b>04</b>Inteligência Artificial</p>
+                <h3>A IA avisa antes de faltar.</h3>
+                <p>Quando o café torrado está acabando, o comprador recebe no WhatsApp o pedido de compra pronto pra aprovar.</p>
+              </div>
+            </li>
+            <li class="elo" aria-hidden="true"><i></i><span>puxa</span></li>
+
+            <li class="estacao" data-frente="05">
+              <div class="estacao-visual">
+                <div class="maquete maquete-campanha" aria-hidden="true">
+                  <div class="maq-topo"><span class="maq-titulo">Campanha</span><span class="status"><i></i>No ar</span></div>
+                  <div class="anuncio">
+                    <div class="anuncio-arte"><strong>Café torrado<br>500 g</strong><small>O café que o cliente pede de novo.</small></div>
+                    <dl class="anuncio-dados">
+                      <div><dt>Produto</dt><dd>Café torrado 500 g</dd></div>
+                      <div><dt>Por quê</dt><dd>Maior margem do mix</dd></div>
+                      <div><dt>Público</dt><dd>Mercados e padarias da região</dd></div>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div class="estacao-legenda">
+                <p class="passo-frente"><b>05</b>Marketing</p>
+                <h3>O marketing investe no que dá lucro.</h3>
+                <p>A campanha vai pro produto com a melhor margem, e não pro que já vende sozinho. E o resultado volta pro painel.</p>
+              </div>
+            </li>
+            <li class="elo elo-volta" aria-hidden="true"><i></i><span>volta pro painel</span></li>
+
+            <li class="estacao estacao-fecho">
+              <p class="fecho-texto">Sozinha, cada frente resolve um pedaço. <em>Juntas, uma aproveita o que a outra descobriu.</em></p>
+            </li>
+          </ol>
+        </div>
+        <p class="pratica-dica" aria-hidden="true">Role pra seguir o caminho <span>→</span></p>
+      </div>
+    </section>
+
+    <!-- ============ depoimentos (exemplo): uma frase por vez ============ -->
+    <section class="secao depoimentos" aria-labelledby="depo-titulo" data-depoimentos>
+      <div class="conteiner">
+        <div class="depo-topo">
+          <p class="olho" id="depo-titulo">Palavra de cliente <span class="selo">Exemplo · trocar pelos depoimentos reais</span></p>
+          <div class="depo-barras" aria-hidden="true"><i><i></i></i><i><i></i></i><i><i></i></i></div>
+        </div>
+        <div class="depo-palco">
+          <figure class="depo ativo">
+            <blockquote><p>Eu só sabia o resultado do mês quando o contador mandava o balanço, lá pelo dia 20 do mês seguinte. Hoje abro o painel na segunda de manhã e já sei como foi a semana.</p></blockquote>
+            <figcaption>
+              <img src="assets/fotos/exemplo/depoimento-1-p.jpg" alt="" width="64" height="64" loading="lazy">
+              <span class="depo-quem"><strong>Rafael Souza</strong><small>Sócio-diretor · Distribuidora Exemplo</small></span>
+              <span class="depo-frentes"><b>02</b>Power BI</span>
+            </figcaption>
+          </figure>
+          <figure class="depo">
+            <blockquote><p>Os vendedores mandavam pedido por WhatsApp, por foto de papel, por áudio. Agora tudo entra pelo aplicativo e cai direto no sistema. Acabou aquela digitação no fim do dia.</p></blockquote>
+            <figcaption>
+              <img src="assets/fotos/exemplo/depoimento-2-p.jpg" alt="" width="64" height="64" loading="lazy">
+              <span class="depo-quem"><strong>Cláudia Ramos</strong><small>Gerente comercial · Indústria Exemplo</small></span>
+              <span class="depo-frentes"><b>03</b>Aplicativos</span>
+            </figcaption>
+          </figure>
+          <figure class="depo">
+            <blockquote><p>O que mais pesou foi não ter que explicar a empresa de novo pra cada fornecedor. Quem arrumou o comercial conversa com quem cuida do marketing, e eu falo com um time só.</p></blockquote>
+            <figcaption>
+              <img src="assets/fotos/exemplo/depoimento-3-p.jpg" alt="" width="64" height="64" loading="lazy">
+              <span class="depo-quem"><strong>Marcos Oliveira</strong><small>Diretor · Lojas Exemplo</small></span>
+              <span class="depo-frentes"><b>01</b>Consultoria <b>05</b>Marketing</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="depo-controles">
+          <button class="depo-seta" type="button" data-depo="-1" aria-label="Depoimento anterior"><i aria-hidden="true">←</i></button>
+          <span class="depo-contador" aria-live="polite"><b>1</b> de 3</span>
+          <button class="depo-seta" type="button" data-depo="1" aria-label="Próximo depoimento"><i aria-hidden="true">→</i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ perguntas frequentes, em forma de conversa ============ -->
+    <section class="secao perguntas" id="perguntas" aria-labelledby="faq-titulo">
+      <div class="conteiner cabeca-centro" data-revelar>
+        <p class="olho">Perguntas frequentes</p>
+        <h2 class="titulo-secao" id="faq-titulo">Pergunta pra <em>gente</em>.</h2>
+        <p class="apoio">As dúvidas que mais aparecem na primeira conversa. Toque numa delas.</p>
+      </div>
+      <div class="conversa" data-conversa data-revelar>
+        <div class="conversa-janela">
+          <div class="conversa-topo">
+            <span class="conversa-avatar" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span><strong>Grupo PowerMetrics</strong><small>Perguntas frequentes</small></span>
+          </div>
+          <div class="conversa-msgs" aria-live="polite"></div>
+        </div>
+        <dl class="faq">
+          <div class="faq-item"><dt>Preciso contratar as cinco frentes?</dt><dd>Não. A maioria das empresas começa por uma, quase sempre a que está pesando mais no dia a dia. A vantagem de ser um time só aparece depois: quando chega a hora de outra frente, ninguém precisa aprender a sua empresa do zero.</dd></div>
+          <div class="faq-item"><dt>Funciona com o sistema que eu já uso?</dt><dd>Quase sempre. O Power BI lê dados de ERPs, planilhas, bancos de dados e sistemas na nuvem. Se algum dado não sai do sistema, a gente procura outro caminho ou constrói o que falta.</dd></div>
+          <div class="faq-item"><dt>Em quanto tempo eu vejo o primeiro painel?</dt><dd>Depende de como os dados estão hoje. No diagnóstico a gente olha isso com você e já sai com o prazo combinado.</dd></div>
+          <div class="faq-item"><dt>Como funciona o marketing de quatro meses?</dt><dd>Nos quatro primeiros meses, a gente toca o seu marketing de ponta a ponta. Enquanto isso, prepara uma pessoa da sua equipe, configura as ferramentas e escreve os manuais. Depois, essa pessoa segue com IA e com tudo documentado.</dd></div>
+          <div class="faq-item"><dt>Vocês atendem fora da região?</dt><dd>A base é em Marau, no norte gaúcho. Painel, aplicativo e IA funcionam bem a distância. Pra consultoria e marketing, a gente combina o formato na primeira conversa.</dd></div>
+          <div class="faq-item"><dt>Como ficam os dados da minha empresa?</dt><dd>O acesso aos painéis é por login, só pra quem você autorizar. Os dados são tratados dentro da LGPD e usados só no trabalho combinado.</dd></div>
+          <div class="faq-item"><dt>Como funciona o diagnóstico?</dt><dd>É a primeira conversa. A gente entende como a empresa está hoje, onde está o maior peso, e mostra por qual frente faz sentido começar. Pra marcar, é só chamar no WhatsApp.</dd></div>
+        </dl>
+        <a class="conversa-whats" href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20PowerMetrics.">Não achou a sua? Chama no WhatsApp <i aria-hidden="true">→</i></a>
+      </div>
+    </section>
+
+    <!-- ============ conteúdo: lista editorial, a capa segue o mouse ============ -->
+    <section class="secao conteudo" aria-labelledby="conteudo-titulo">
+      <div class="conteiner">
+        <div class="conteudo-topo" data-revelar>
+          <p class="olho">Conteúdo</p>
+          <h2 class="titulo-secao" id="conteudo-titulo">Pra quem <em>toca empresa</em>.</h2>
+          <a class="link-seta" href="blog.html">Ver todos os artigos <i aria-hidden="true">→</i></a>
+        </div>
+        <ol class="lista-artigos" data-revelar-grupo><li data-revelar><a class="linha-artigo" href="blog/tudo-passa-pelo-dono.html"><span class="la-n">01</span><span class="la-corpo"><span class="la-frente">Consultoria</span><span class="la-titulo">Se tudo passa pelo dono, a empresa para quando ele tira férias</span></span><span class="la-meta">4 min<i aria-hidden="true">→</i></span><span class="la-capa" aria-hidden="true"><svg class="capa" viewBox="0 0 320 180" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="brasa-tudopassapelodonolista" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB36B"/><stop offset=".5" stop-color="#F58434"/><stop offset="1" stop-color="#E2521F"/></linearGradient></defs><rect width="320" height="180" fill="#17181C"/><rect x="67" y="108" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.79"/><rect x="66" y="85" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.77"/><rect x="100" y="99" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.44"/><rect x="96" y="91" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.38"/><rect x="51" y="123" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.67"/><rect x="72" y="65" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.65"/><rect x="117" y="138" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.66"/><rect x="49" y="24" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.56"/><rect x="76" y="58" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.68"/><rect x="31" y="137" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.71"/><rect x="29" y="32" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.54"/><rect x="65" y="138" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.38"/><rect x="63" y="103" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.46"/><rect x="52" y="93" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.37"/><rect x="97" y="36" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.36"/><rect x="26" y="67" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.52"/><rect x="51" y="59" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.70"/><rect x="92" y="64" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.49"/><rect x="85" y="125" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.84"/><rect x="100" y="58" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.82"/><rect x="87" y="54" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.36"/><rect x="59" y="107" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.44"/><rect x="63" y="61" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.42"/><rect x="103" y="116" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.54"/><rect x="100" y="111" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.45"/><rect x="94" y="35" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.46"/><rect x="176" y="54" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="188" y="54" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="200" y="54" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="212" y="54" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="224" y="54" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="236" y="54" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="248" y="54" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="260" y="54" width="10" height="10" rx="1.5" fill="url(#brasa-tudopassapelodonolista)" opacity="1.00"/><rect x="176" y="66" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="188" y="66" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="200" y="66" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="212" y="66" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="224" y="66" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="236" y="66" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="248" y="66" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="260" y="66" width="10" height="10" rx="1.5" fill="url(#brasa-tudopassapelodonolista)" opacity="1.00"/><rect x="176" y="78" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="188" y="78" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="200" y="78" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="212" y="78" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="224" y="78" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="236" y="78" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="248" y="78" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="260" y="78" width="10" height="10" rx="1.5" fill="url(#brasa-tudopassapelodonolista)" opacity="1.00"/></svg></span></a></li><li data-revelar><a class="linha-artigo" href="blog/sei-quanto-vendi-nao-sei-quanto-sobrou.html"><span class="la-n">02</span><span class="la-corpo"><span class="la-frente">Power BI</span><span class="la-titulo">Sei quanto vendi, não sei quanto sobrou</span></span><span class="la-meta">4 min<i aria-hidden="true">→</i></span><span class="la-capa" aria-hidden="true"><svg class="capa" viewBox="0 0 320 180" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="brasa-seiquantovendinaoseiquan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB36B"/><stop offset=".5" stop-color="#F58434"/><stop offset="1" stop-color="#E2521F"/></linearGradient></defs><rect width="320" height="180" fill="#17181C"/><rect x="52" y="154" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="52" y="142" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="52" y="130" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="80" y="154" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="80" y="142" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="80" y="130" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="80" y="118" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="80" y="106" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="108" y="154" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="108" y="142" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="108" y="130" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="108" y="118" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="136" y="154" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="136" y="142" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="136" y="130" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="136" y="118" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="136" y="106" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="136" y="94" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="136" y="82" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="164" y="154" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="164" y="142" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="164" y="130" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="164" y="118" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="164" y="106" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="164" y="94" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="192" y="154" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="192" y="142" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="192" y="130" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="192" y="118" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="192" y="106" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="192" y="94" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="192" y="82" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="192" y="70" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="192" y="58" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="220" y="154" width="10" height="10" rx="1.5" fill="url(#brasa-seiquantovendinaoseiquan)" opacity="1.00"/><rect x="220" y="142" width="10" height="10" rx="1.5" fill="url(#brasa-seiquantovendinaoseiquan)" opacity="1.00"/><rect x="220" y="130" width="10" height="10" rx="1.5" fill="url(#brasa-seiquantovendinaoseiquan)" opacity="1.00"/><rect x="220" y="118" width="10" height="10" rx="1.5" fill="url(#brasa-seiquantovendinaoseiquan)" opacity="1.00"/><rect x="220" y="106" width="10" height="10" rx="1.5" fill="url(#brasa-seiquantovendinaoseiquan)" opacity="1.00"/><rect x="220" y="94" width="10" height="10" rx="1.5" fill="url(#brasa-seiquantovendinaoseiquan)" opacity="1.00"/><rect x="220" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-seiquantovendinaoseiquan)" opacity="1.00"/><rect x="220" y="70" width="10" height="10" rx="1.5" fill="url(#brasa-seiquantovendinaoseiquan)" opacity="1.00"/><rect x="248" y="154" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="248" y="142" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="248" y="130" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="248" y="118" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="248" y="106" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="248" y="94" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="248" y="82" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="248" y="70" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="248" y="58" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="248" y="46" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/><rect x="248" y="34" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="1.00"/></svg></span></a></li><li data-revelar><a class="linha-artigo" href="blog/ia-na-empresa-pequena-sem-gastar-a-toa.html"><span class="la-n">04</span><span class="la-corpo"><span class="la-frente">Inteligência Artificial</span><span class="la-titulo">Como começar com IA na empresa pequena sem gastar à toa</span></span><span class="la-meta">4 min<i aria-hidden="true">→</i></span><span class="la-capa" aria-hidden="true"><svg class="capa" viewBox="0 0 320 180" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="brasa-ianaempresapequenasemgas" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB36B"/><stop offset=".5" stop-color="#F58434"/><stop offset="1" stop-color="#E2521F"/></linearGradient></defs><rect width="320" height="180" fill="#17181C"/><rect x="16" y="22" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="16" y="58" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="16" y="154" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="28" y="22" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="28" y="58" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="28" y="70" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="28" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="28" y="118" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="28" y="142" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="40" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="52" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="52" y="130" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="64" y="10" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="64" y="58" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="64" y="70" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="64" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="64" y="94" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="64" y="118" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="76" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="76" y="118" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="88" y="58" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="88" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="88" y="94" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="88" y="106" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="100" y="34" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="100" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="112" y="10" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="112" y="70" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="112" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="124" y="70" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="124" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="124" y="106" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="124" y="118" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="136" y="10" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="136" y="34" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="136" y="46" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="136" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="136" y="142" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="148" y="46" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="148" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="160" y="22" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="160" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="160" y="106" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="172" y="58" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="172" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="172" y="118" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="184" y="34" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="184" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="196" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="196" y="130" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="196" y="154" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="208" y="10" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="208" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="208" y="106" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="208" y="130" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="220" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="232" y="22" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="232" y="34" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="232" y="46" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="232" y="58" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="232" y="70" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="232" y="82" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="232" y="154" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="244" y="34" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="256" y="10" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="256" y="34" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="268" y="10" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="268" y="22" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="268" y="34" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="268" y="130" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="268" y="142" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="280" y="22" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="280" y="34" width="10" height="10" rx="1.5" fill="url(#brasa-ianaempresapequenasemgas)" opacity="1.00"/><rect x="280" y="46" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/><rect x="280" y="118" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.55"/></svg></span></a></li><li data-revelar><a class="linha-artigo" href="blog/marketing-que-uma-pessoa-da-casa-consegue-tocar.html"><span class="la-n">05</span><span class="la-corpo"><span class="la-frente">Marketing</span><span class="la-titulo">Como montar um marketing que uma pessoa da casa consegue tocar</span></span><span class="la-meta">4 min<i aria-hidden="true">→</i></span><span class="la-capa" aria-hidden="true"><svg class="capa" viewBox="0 0 320 180" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="brasa-marketingqueumapessoadac" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB36B"/><stop offset=".5" stop-color="#F58434"/><stop offset="1" stop-color="#E2521F"/></linearGradient></defs><rect width="320" height="180" fill="#17181C"/><rect x="34" y="146" width="10" height="10" rx="1.5" fill="url(#brasa-marketingqueumapessoadac)" opacity="1.00"/><rect x="56" y="136" width="10" height="10" rx="1.5" fill="url(#brasa-marketingqueumapessoadac)" opacity="1.00"/><rect x="56" y="148" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="78" y="126" width="10" height="10" rx="1.5" fill="url(#brasa-marketingqueumapessoadac)" opacity="1.00"/><rect x="78" y="138" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="78" y="150" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="100" y="116" width="10" height="10" rx="1.5" fill="url(#brasa-marketingqueumapessoadac)" opacity="1.00"/><rect x="100" y="128" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="100" y="140" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="100" y="152" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="122" y="106" width="10" height="10" rx="1.5" fill="url(#brasa-marketingqueumapessoadac)" opacity="1.00"/><rect x="122" y="118" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="122" y="130" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="122" y="142" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="122" y="154" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="144" y="96" width="10" height="10" rx="1.5" fill="url(#brasa-marketingqueumapessoadac)" opacity="1.00"/><rect x="144" y="108" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="144" y="120" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="144" y="132" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="144" y="144" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="144" y="156" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="166" y="86" width="10" height="10" rx="1.5" fill="url(#brasa-marketingqueumapessoadac)" opacity="1.00"/><rect x="166" y="98" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="166" y="110" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="166" y="122" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="166" y="134" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="166" y="146" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="188" y="76" width="10" height="10" rx="1.5" fill="url(#brasa-marketingqueumapessoadac)" opacity="1.00"/><rect x="188" y="88" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="188" y="100" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="188" y="112" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="188" y="124" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="188" y="136" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="210" y="66" width="10" height="10" rx="1.5" fill="url(#brasa-marketingqueumapessoadac)" opacity="1.00"/><rect x="210" y="78" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="210" y="90" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="210" y="102" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="210" y="114" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="210" y="126" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="232" y="56" width="10" height="10" rx="1.5" fill="url(#brasa-marketingqueumapessoadac)" opacity="1.00"/><rect x="232" y="68" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="232" y="80" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="232" y="92" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="232" y="104" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="232" y="116" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="254" y="46" width="10" height="10" rx="1.5" fill="url(#brasa-marketingqueumapessoadac)" opacity="1.00"/><rect x="254" y="58" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="254" y="70" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="254" y="82" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="254" y="94" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="254" y="106" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="276" y="36" width="10" height="10" rx="1.5" fill="url(#brasa-marketingqueumapessoadac)" opacity="1.00"/><rect x="276" y="48" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="276" y="60" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="276" y="72" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="276" y="84" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/><rect x="276" y="96" width="10" height="10" rx="1.5" fill="#3A3E46" opacity="0.50"/></svg></span></a></li></ol>
+      </div>
+    </section>
+
+    <!-- ============ chamada final: o símbolo acende atrás do título ============ -->
+    <section class="cta-final cta-luz" aria-labelledby="cta-titulo">
+      <div class="cta-simbolo" aria-hidden="true"><svg class="chevron-celulas" viewBox="-2 -2 168 314" aria-hidden="true"><defs><linearGradient id="brasa-cel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB36B"/><stop offset=".45" stop-color="#F58434"/><stop offset="1" stop-color="#E2521F"/></linearGradient></defs><g fill="url(#brasa-cel)"><rect x="32.6" y="0.6" width="6.7" height="6.7" rx="1.2" style="--i:0"/><rect x="40.6" y="0.6" width="6.7" height="6.7" rx="1.2" style="--i:1"/><rect x="48.6" y="0.6" width="6.7" height="6.7" rx="1.2" style="--i:2"/><rect x="56.6" y="0.6" width="6.7" height="6.7" rx="1.2" style="--i:3"/><rect x="24.6" y="8.6" width="6.7" height="6.7" rx="1.2" style="--i:4"/><rect x="32.6" y="8.6" width="6.7" height="6.7" rx="1.2" style="--i:5"/><rect x="40.6" y="8.6" width="6.7" height="6.7" rx="1.2" style="--i:6"/><rect x="48.6" y="8.6" width="6.7" height="6.7" rx="1.2" style="--i:7"/><rect x="56.6" y="8.6" width="6.7" height="6.7" rx="1.2" style="--i:8"/><rect x="64.6" y="8.6" width="6.7" height="6.7" rx="1.2" style="--i:9"/><rect x="16.6" y="16.6" width="6.7" height="6.7" rx="1.2" style="--i:10"/><rect x="24.6" y="16.6" width="6.7" height="6.7" rx="1.2" style="--i:11"/><rect x="32.6" y="16.6" width="6.7" height="6.7" rx="1.2" style="--i:12"/><rect x="40.6" y="16.6" width="6.7" height="6.7" rx="1.2" style="--i:13"/><rect x="48.6" y="16.6" width="6.7" height="6.7" rx="1.2" style="--i:14"/><rect x="16.6" y="24.6" width="6.7" height="6.7" rx="1.2" style="--i:15"/><rect x="24.6" y="24.6" width="6.7" height="6.7" rx="1.2" style="--i:16"/><rect x="56.6" y="16.6" width="6.7" height="6.7" rx="1.2" style="--i:17"/><rect x="64.6" y="16.6" width="6.7" height="6.7" rx="1.2" style="--i:18"/><rect x="72.6" y="16.6" width="6.7" height="6.7" rx="1.2" style="--i:19"/><rect x="32.6" y="24.6" width="6.7" height="6.7" rx="1.2" style="--i:20"/><rect x="40.6" y="24.6" width="6.7" height="6.7" rx="1.2" style="--i:21"/><rect x="48.6" y="24.6" width="6.7" height="6.7" rx="1.2" style="--i:22"/><rect x="16.6" y="32.6" width="6.7" height="6.7" rx="1.2" style="--i:23"/><rect x="56.6" y="24.6" width="6.7" height="6.7" rx="1.2" style="--i:24"/><rect x="24.6" y="32.6" width="6.7" height="6.7" rx="1.2" style="--i:25"/><rect x="32.6" y="32.6" width="6.7" height="6.7" rx="1.2" style="--i:26"/><rect x="40.6" y="32.6" width="6.7" height="6.7" rx="1.2" style="--i:27"/><rect x="16.6" y="40.6" width="6.7" height="6.7" rx="1.2" style="--i:28"/><rect x="24.6" y="40.6" width="6.7" height="6.7" rx="1.2" style="--i:29"/><rect x="64.6" y="24.6" width="6.7" height="6.7" rx="1.2" style="--i:30"/><rect x="48.6" y="32.6" width="6.7" height="6.7" rx="1.2" style="--i:31"/><rect x="32.6" y="40.6" width="6.7" height="6.7" rx="1.2" style="--i:32"/><rect x="72.6" y="24.6" width="6.7" height="6.7" rx="1.2" style="--i:33"/><rect x="56.6" y="32.6" width="6.7" height="6.7" rx="1.2" style="--i:34"/><rect x="40.6" y="40.6" width="6.7" height="6.7" rx="1.2" style="--i:35"/><rect x="24.6" y="48.6" width="6.7" height="6.7" rx="1.2" style="--i:36"/><rect x="32.6" y="48.6" width="6.7" height="6.7" rx="1.2" style="--i:37"/><rect x="64.6" y="32.6" width="6.7" height="6.7" rx="1.2" style="--i:38"/><rect x="48.6" y="40.6" width="6.7" height="6.7" rx="1.2" style="--i:39"/><rect x="40.6" y="48.6" width="6.7" height="6.7" rx="1.2" style="--i:40"/><rect x="24.6" y="56.6" width="6.7" height="6.7" rx="1.2" style="--i:41"/><rect x="80.6" y="24.6" width="6.7" height="6.7" rx="1.2" style="--i:42"/><rect x="72.6" y="32.6" width="6.7" height="6.7" rx="1.2" style="--i:43"/><rect x="56.6" y="40.6" width="6.7" height="6.7" rx="1.2" style="--i:44"/><rect x="48.6" y="48.6" width="6.7" height="6.7" rx="1.2" style="--i:45"/><rect x="32.6" y="56.6" width="6.7" height="6.7" rx="1.2" style="--i:46"/><rect x="40.6" y="56.6" width="6.7" height="6.7" rx="1.2" style="--i:47"/><rect x="64.6" y="40.6" width="6.7" height="6.7" rx="1.2" style="--i:48"/><rect x="80.6" y="32.6" width="6.7" height="6.7" rx="1.2" style="--i:49"/><rect x="72.6" y="40.6" width="6.7" height="6.7" rx="1.2" style="--i:50"/><rect x="56.6" y="48.6" width="6.7" height="6.7" rx="1.2" style="--i:51"/><rect x="48.6" y="56.6" width="6.7" height="6.7" rx="1.2" style="--i:52"/><rect x="32.6" y="64.6" width="6.7" height="6.7" rx="1.2" style="--i:53"/><rect x="40.6" y="64.6" width="6.7" height="6.7" rx="1.2" style="--i:54"/><rect x="80.6" y="40.6" width="6.7" height="6.7" rx="1.2" style="--i:55"/><rect x="64.6" y="48.6" width="6.7" height="6.7" rx="1.2" style="--i:56"/><rect x="56.6" y="56.6" width="6.7" height="6.7" rx="1.2" style="--i:57"/><rect x="48.6" y="64.6" width="6.7" height="6.7" rx="1.2" style="--i:58"/><rect x="72.6" y="48.6" width="6.7" height="6.7" rx="1.2" style="--i:59"/><rect x="64.6" y="56.6" width="6.7" height="6.7" rx="1.2" style="--i:60"/><rect x="40.6" y="72.6" width="6.7" height="6.7" rx="1.2" style="--i:61"/><rect x="88.6" y="40.6" width="6.7" height="6.7" rx="1.2" style="--i:62"/><rect x="80.6" y="48.6" width="6.7" height="6.7" rx="1.2" style="--i:63"/><rect x="56.6" y="64.6" width="6.7" height="6.7" rx="1.2" style="--i:64"/><rect x="48.6" y="72.6" width="6.7" height="6.7" rx="1.2" style="--i:65"/><rect x="88.6" y="48.6" width="6.7" height="6.7" rx="1.2" style="--i:66"/><rect x="72.6" y="56.6" width="6.7" height="6.7" rx="1.2" style="--i:67"/><rect x="64.6" y="64.6" width="6.7" height="6.7" rx="1.2" style="--i:68"/><rect x="56.6" y="72.6" width="6.7" height="6.7" rx="1.2" style="--i:69"/><rect x="48.6" y="80.6" width="6.7" height="6.7" rx="1.2" style="--i:70"/><rect x="96.6" y="48.6" width="6.7" height="6.7" rx="1.2" style="--i:71"/><rect x="80.6" y="56.6" width="6.7" height="6.7" rx="1.2" style="--i:72"/><rect x="88.6" y="56.6" width="6.7" height="6.7" rx="1.2" style="--i:73"/><rect x="72.6" y="64.6" width="6.7" height="6.7" rx="1.2" style="--i:74"/><rect x="64.6" y="72.6" width="6.7" height="6.7" rx="1.2" style="--i:75"/><rect x="56.6" y="80.6" width="6.7" height="6.7" rx="1.2" style="--i:76"/><rect x="80.6" y="64.6" width="6.7" height="6.7" rx="1.2" style="--i:77"/><rect x="72.6" y="72.6" width="6.7" height="6.7" rx="1.2" style="--i:78"/><rect x="48.6" y="88.6" width="6.7" height="6.7" rx="1.2" style="--i:79"/><rect x="96.6" y="56.6" width="6.7" height="6.7" rx="1.2" style="--i:80"/><rect x="64.6" y="80.6" width="6.7" height="6.7" rx="1.2" style="--i:81"/><rect x="88.6" y="64.6" width="6.7" height="6.7" rx="1.2" style="--i:82"/><rect x="80.6" y="72.6" width="6.7" height="6.7" rx="1.2" style="--i:83"/><rect x="56.6" y="88.6" width="6.7" height="6.7" rx="1.2" style="--i:84"/><rect x="72.6" y="80.6" width="6.7" height="6.7" rx="1.2" style="--i:85"/><rect x="96.6" y="64.6" width="6.7" height="6.7" rx="1.2" style="--i:86"/><rect x="104.6" y="64.6" width="6.7" height="6.7" rx="1.2" style="--i:87"/><rect x="88.6" y="72.6" width="6.7" height="6.7" rx="1.2" style="--i:88"/><rect x="80.6" y="80.6" width="6.7" height="6.7" rx="1.2" style="--i:89"/><rect x="64.6" y="88.6" width="6.7" height="6.7" rx="1.2" style="--i:90"/><rect x="56.6" y="96.6" width="6.7" height="6.7" rx="1.2" style="--i:91"/><rect x="96.6" y="72.6" width="6.7" height="6.7" rx="1.2" style="--i:92"/><rect x="72.6" y="88.6" width="6.7" height="6.7" rx="1.2" style="--i:93"/><rect x="64.6" y="96.6" width="6.7" height="6.7" rx="1.2" style="--i:94"/><rect x="88.6" y="80.6" width="6.7" height="6.7" rx="1.2" style="--i:95"/><rect x="104.6" y="72.6" width="6.7" height="6.7" rx="1.2" style="--i:96"/><rect x="80.6" y="88.6" width="6.7" height="6.7" rx="1.2" style="--i:97"/><rect x="72.6" y="96.6" width="6.7" height="6.7" rx="1.2" style="--i:98"/><rect x="96.6" y="80.6" width="6.7" height="6.7" rx="1.2" style="--i:99"/><rect x="88.6" y="88.6" width="6.7" height="6.7" rx="1.2" style="--i:100"/><rect x="64.6" y="104.6" width="6.7" height="6.7" rx="1.2" style="--i:101"/><rect x="112.6" y="72.6" width="6.7" height="6.7" rx="1.2" style="--i:102"/><rect x="80.6" y="96.6" width="6.7" height="6.7" rx="1.2" style="--i:103"/><rect x="104.6" y="80.6" width="6.7" height="6.7" rx="1.2" style="--i:104"/><rect x="96.6" y="88.6" width="6.7" height="6.7" rx="1.2" style="--i:105"/><rect x="72.6" y="104.6" width="6.7" height="6.7" rx="1.2" style="--i:106"/><rect x="64.6" y="112.6" width="6.7" height="6.7" rx="1.2" style="--i:107"/><rect x="88.6" y="96.6" width="6.7" height="6.7" rx="1.2" style="--i:108"/><rect x="112.6" y="80.6" width="6.7" height="6.7" rx="1.2" style="--i:109"/><rect x="104.6" y="88.6" width="6.7" height="6.7" rx="1.2" style="--i:110"/><rect x="80.6" y="104.6" width="6.7" height="6.7" rx="1.2" style="--i:111"/><rect x="120.6" y="80.6" width="6.7" height="6.7" rx="1.2" style="--i:112"/><rect x="96.6" y="96.6" width="6.7" height="6.7" rx="1.2" style="--i:113"/><rect x="88.6" y="104.6" width="6.7" height="6.7" rx="1.2" style="--i:114"/><rect x="72.6" y="112.6" width="6.7" height="6.7" rx="1.2" style="--i:115"/><rect x="80.6" y="112.6" width="6.7" height="6.7" rx="1.2" style="--i:116"/><rect x="72.6" y="120.6" width="6.7" height="6.7" rx="1.2" style="--i:117"/><rect x="112.6" y="88.6" width="6.7" height="6.7" rx="1.2" style="--i:118"/><rect x="104.6" y="96.6" width="6.7" height="6.7" rx="1.2" style="--i:119"/><rect x="96.6" y="104.6" width="6.7" height="6.7" rx="1.2" style="--i:120"/><rect x="88.6" y="112.6" width="6.7" height="6.7" rx="1.2" style="--i:121"/><rect x="80.6" y="120.6" width="6.7" height="6.7" rx="1.2" style="--i:122"/><rect x="120.6" y="88.6" width="6.7" height="6.7" rx="1.2" style="--i:123"/><rect x="112.6" y="96.6" width="6.7" height="6.7" rx="1.2" style="--i:124"/><rect x="104.6" y="104.6" width="6.7" height="6.7" rx="1.2" style="--i:125"/><rect x="96.6" y="112.6" width="6.7" height="6.7" rx="1.2" style="--i:126"/><rect x="88.6" y="120.6" width="6.7" height="6.7" rx="1.2" style="--i:127"/><rect x="120.6" y="96.6" width="6.7" height="6.7" rx="1.2" style="--i:128"/><rect x="112.6" y="104.6" width="6.7" height="6.7" rx="1.2" style="--i:129"/><rect x="104.6" y="112.6" width="6.7" height="6.7" rx="1.2" style="--i:130"/><rect x="96.6" y="120.6" width="6.7" height="6.7" rx="1.2" style="--i:131"/><rect x="80.6" y="128.6" width="6.7" height="6.7" rx="1.2" style="--i:132"/><rect x="128.6" y="96.6" width="6.7" height="6.7" rx="1.2" style="--i:133"/><rect x="120.6" y="104.6" width="6.7" height="6.7" rx="1.2" style="--i:134"/><rect x="112.6" y="112.6" width="6.7" height="6.7" rx="1.2" style="--i:135"/><rect x="88.6" y="128.6" width="6.7" height="6.7" rx="1.2" style="--i:136"/><rect x="128.6" y="104.6" width="6.7" height="6.7" rx="1.2" style="--i:137"/><rect x="120.6" y="112.6" width="6.7" height="6.7" rx="1.2" style="--i:138"/><rect x="104.6" y="120.6" width="6.7" height="6.7" rx="1.2" style="--i:139"/><rect x="96.6" y="128.6" width="6.7" height="6.7" rx="1.2" style="--i:140"/><rect x="80.6" y="136.6" width="6.7" height="6.7" rx="1.2" style="--i:141"/><rect x="88.6" y="136.6" width="6.7" height="6.7" rx="1.2" style="--i:142"/><rect x="136.6" y="104.6" width="6.7" height="6.7" rx="1.2" style="--i:143"/><rect x="112.6" y="120.6" width="6.7" height="6.7" rx="1.2" style="--i:144"/><rect x="104.6" y="128.6" width="6.7" height="6.7" rx="1.2" style="--i:145"/><rect x="128.6" y="112.6" width="6.7" height="6.7" rx="1.2" style="--i:146"/><rect x="136.6" y="112.6" width="6.7" height="6.7" rx="1.2" style="--i:147"/><rect x="120.6" y="120.6" width="6.7" height="6.7" rx="1.2" style="--i:148"/><rect x="144.6" y="112.6" width="6.7" height="6.7" rx="1.2" style="--i:149"/><rect x="128.6" y="120.6" width="6.7" height="6.7" rx="1.2" style="--i:150"/><rect x="136.6" y="120.6" width="6.7" height="6.7" rx="1.2" style="--i:151"/><rect x="112.6" y="128.6" width="6.7" height="6.7" rx="1.2" style="--i:152"/><rect x="120.6" y="128.6" width="6.7" height="6.7" rx="1.2" style="--i:153"/><rect x="96.6" y="136.6" width="6.7" height="6.7" rx="1.2" style="--i:154"/><rect x="104.6" y="136.6" width="6.7" height="6.7" rx="1.2" style="--i:155"/><rect x="144.6" y="120.6" width="6.7" height="6.7" rx="1.2" style="--i:156"/><rect x="128.6" y="128.6" width="6.7" height="6.7" rx="1.2" style="--i:157"/><rect x="136.6" y="128.6" width="6.7" height="6.7" rx="1.2" style="--i:158"/><rect x="144.6" y="128.6" width="6.7" height="6.7" rx="1.2" style="--i:159"/><rect x="152.6" y="128.6" width="6.7" height="6.7" rx="1.2" style="--i:160"/><rect x="112.6" y="136.6" width="6.7" height="6.7" rx="1.2" style="--i:161"/><rect x="120.6" y="136.6" width="6.7" height="6.7" rx="1.2" style="--i:162"/><rect x="128.6" y="136.6" width="6.7" height="6.7" rx="1.2" style="--i:163"/><rect x="136.6" y="136.6" width="6.7" height="6.7" rx="1.2" style="--i:164"/><rect x="144.6" y="136.6" width="6.7" height="6.7" rx="1.2" style="--i:165"/><rect x="152.6" y="136.6" width="6.7" height="6.7" rx="1.2" style="--i:166"/><rect x="88.6" y="144.6" width="6.7" height="6.7" rx="1.2" style="--i:167"/><rect x="96.6" y="144.6" width="6.7" height="6.7" rx="1.2" style="--i:168"/><rect x="104.6" y="144.6" width="6.7" height="6.7" rx="1.2" style="--i:169"/><rect x="112.6" y="144.6" width="6.7" height="6.7" rx="1.2" style="--i:170"/><rect x="120.6" y="144.6" width="6.7" height="6.7" rx="1.2" style="--i:171"/><rect x="128.6" y="144.6" width="6.7" height="6.7" rx="1.2" style="--i:172"/><rect x="136.6" y="144.6" width="6.7" height="6.7" rx="1.2" style="--i:173"/><rect x="144.6" y="144.6" width="6.7" height="6.7" rx="1.2" style="--i:174"/><rect x="152.6" y="144.6" width="6.7" height="6.7" rx="1.2" style="--i:175"/><rect x="136.6" y="152.6" width="6.7" height="6.7" rx="1.2" style="--i:176"/><rect x="144.6" y="152.6" width="6.7" height="6.7" rx="1.2" style="--i:177"/><rect x="152.6" y="152.6" width="6.7" height="6.7" rx="1.2" style="--i:178"/><rect x="120.6" y="152.6" width="6.7" height="6.7" rx="1.2" style="--i:179"/><rect x="128.6" y="152.6" width="6.7" height="6.7" rx="1.2" style="--i:180"/><rect x="80.6" y="144.6" width="6.7" height="6.7" rx="1.2" style="--i:181"/><rect x="112.6" y="152.6" width="6.7" height="6.7" rx="1.2" style="--i:182"/><rect x="128.6" y="160.6" width="6.7" height="6.7" rx="1.2" style="--i:183"/><rect x="136.6" y="160.6" width="6.7" height="6.7" rx="1.2" style="--i:184"/><rect x="144.6" y="160.6" width="6.7" height="6.7" rx="1.2" style="--i:185"/><rect x="152.6" y="160.6" width="6.7" height="6.7" rx="1.2" style="--i:186"/><rect x="104.6" y="152.6" width="6.7" height="6.7" rx="1.2" style="--i:187"/><rect x="120.6" y="160.6" width="6.7" height="6.7" rx="1.2" style="--i:188"/><rect x="136.6" y="168.6" width="6.7" height="6.7" rx="1.2" style="--i:189"/><rect x="144.6" y="168.6" width="6.7" height="6.7" rx="1.2" style="--i:190"/><rect x="96.6" y="152.6" width="6.7" height="6.7" rx="1.2" style="--i:191"/><rect x="112.6" y="160.6" width="6.7" height="6.7" rx="1.2" style="--i:192"/><rect x="128.6" y="168.6" width="6.7" height="6.7" rx="1.2" style="--i:193"/><rect x="88.6" y="152.6" width="6.7" height="6.7" rx="1.2" style="--i:194"/><rect x="104.6" y="160.6" width="6.7" height="6.7" rx="1.2" style="--i:195"/><rect x="120.6" y="168.6" width="6.7" height="6.7" rx="1.2" style="--i:196"/><rect x="136.6" y="176.6" width="6.7" height="6.7" rx="1.2" style="--i:197"/><rect x="112.6" y="168.6" width="6.7" height="6.7" rx="1.2" style="--i:198"/><rect x="128.6" y="176.6" width="6.7" height="6.7" rx="1.2" style="--i:199"/><rect x="136.6" y="184.6" width="6.7" height="6.7" rx="1.2" style="--i:200"/><rect x="96.6" y="160.6" width="6.7" height="6.7" rx="1.2" style="--i:201"/><rect x="120.6" y="176.6" width="6.7" height="6.7" rx="1.2" style="--i:202"/><rect x="128.6" y="184.6" width="6.7" height="6.7" rx="1.2" style="--i:203"/><rect x="104.6" y="168.6" width="6.7" height="6.7" rx="1.2" style="--i:204"/><rect x="80.6" y="152.6" width="6.7" height="6.7" rx="1.2" style="--i:205"/><rect x="88.6" y="160.6" width="6.7" height="6.7" rx="1.2" style="--i:206"/><rect x="96.6" y="168.6" width="6.7" height="6.7" rx="1.2" style="--i:207"/><rect x="112.6" y="176.6" width="6.7" height="6.7" rx="1.2" style="--i:208"/><rect x="120.6" y="184.6" width="6.7" height="6.7" rx="1.2" style="--i:209"/><rect x="128.6" y="192.6" width="6.7" height="6.7" rx="1.2" style="--i:210"/><rect x="80.6" y="160.6" width="6.7" height="6.7" rx="1.2" style="--i:211"/><rect x="88.6" y="168.6" width="6.7" height="6.7" rx="1.2" style="--i:212"/><rect x="104.6" y="176.6" width="6.7" height="6.7" rx="1.2" style="--i:213"/><rect x="112.6" y="184.6" width="6.7" height="6.7" rx="1.2" style="--i:214"/><rect x="120.6" y="192.6" width="6.7" height="6.7" rx="1.2" style="--i:215"/><rect x="80.6" y="168.6" width="6.7" height="6.7" rx="1.2" style="--i:216"/><rect x="96.6" y="176.6" width="6.7" height="6.7" rx="1.2" style="--i:217"/><rect x="104.6" y="184.6" width="6.7" height="6.7" rx="1.2" style="--i:218"/><rect x="112.6" y="192.6" width="6.7" height="6.7" rx="1.2" style="--i:219"/><rect x="120.6" y="200.6" width="6.7" height="6.7" rx="1.2" style="--i:220"/><rect x="72.6" y="168.6" width="6.7" height="6.7" rx="1.2" style="--i:221"/><rect x="80.6" y="176.6" width="6.7" height="6.7" rx="1.2" style="--i:222"/><rect x="88.6" y="176.6" width="6.7" height="6.7" rx="1.2" style="--i:223"/><rect x="96.6" y="184.6" width="6.7" height="6.7" rx="1.2" style="--i:224"/><rect x="104.6" y="192.6" width="6.7" height="6.7" rx="1.2" style="--i:225"/><rect x="88.6" y="184.6" width="6.7" height="6.7" rx="1.2" style="--i:226"/><rect x="112.6" y="200.6" width="6.7" height="6.7" rx="1.2" style="--i:227"/><rect x="72.6" y="176.6" width="6.7" height="6.7" rx="1.2" style="--i:228"/><rect x="96.6" y="192.6" width="6.7" height="6.7" rx="1.2" style="--i:229"/><rect x="104.6" y="200.6" width="6.7" height="6.7" rx="1.2" style="--i:230"/><rect x="80.6" y="184.6" width="6.7" height="6.7" rx="1.2" style="--i:231"/><rect x="112.6" y="208.6" width="6.7" height="6.7" rx="1.2" style="--i:232"/><rect x="64.6" y="176.6" width="6.7" height="6.7" rx="1.2" style="--i:233"/><rect x="88.6" y="192.6" width="6.7" height="6.7" rx="1.2" style="--i:234"/><rect x="96.6" y="200.6" width="6.7" height="6.7" rx="1.2" style="--i:235"/><rect x="72.6" y="184.6" width="6.7" height="6.7" rx="1.2" style="--i:236"/><rect x="104.6" y="208.6" width="6.7" height="6.7" rx="1.2" style="--i:237"/><rect x="80.6" y="192.6" width="6.7" height="6.7" rx="1.2" style="--i:238"/><rect x="88.6" y="200.6" width="6.7" height="6.7" rx="1.2" style="--i:239"/><rect x="112.6" y="216.6" width="6.7" height="6.7" rx="1.2" style="--i:240"/><rect x="64.6" y="184.6" width="6.7" height="6.7" rx="1.2" style="--i:241"/><rect x="96.6" y="208.6" width="6.7" height="6.7" rx="1.2" style="--i:242"/><rect x="72.6" y="192.6" width="6.7" height="6.7" rx="1.2" style="--i:243"/><rect x="80.6" y="200.6" width="6.7" height="6.7" rx="1.2" style="--i:244"/><rect x="104.6" y="216.6" width="6.7" height="6.7" rx="1.2" style="--i:245"/><rect x="64.6" y="192.6" width="6.7" height="6.7" rx="1.2" style="--i:246"/><rect x="88.6" y="208.6" width="6.7" height="6.7" rx="1.2" style="--i:247"/><rect x="56.6" y="192.6" width="6.7" height="6.7" rx="1.2" style="--i:248"/><rect x="72.6" y="200.6" width="6.7" height="6.7" rx="1.2" style="--i:249"/><rect x="80.6" y="208.6" width="6.7" height="6.7" rx="1.2" style="--i:250"/><rect x="96.6" y="216.6" width="6.7" height="6.7" rx="1.2" style="--i:251"/><rect x="64.6" y="200.6" width="6.7" height="6.7" rx="1.2" style="--i:252"/><rect x="88.6" y="216.6" width="6.7" height="6.7" rx="1.2" style="--i:253"/><rect x="72.6" y="208.6" width="6.7" height="6.7" rx="1.2" style="--i:254"/><rect x="80.6" y="216.6" width="6.7" height="6.7" rx="1.2" style="--i:255"/><rect x="56.6" y="200.6" width="6.7" height="6.7" rx="1.2" style="--i:256"/><rect x="64.6" y="208.6" width="6.7" height="6.7" rx="1.2" style="--i:257"/><rect x="72.6" y="216.6" width="6.7" height="6.7" rx="1.2" style="--i:258"/><rect x="48.6" y="200.6" width="6.7" height="6.7" rx="1.2" style="--i:259"/><rect x="56.6" y="208.6" width="6.7" height="6.7" rx="1.2" style="--i:260"/><rect x="64.6" y="216.6" width="6.7" height="6.7" rx="1.2" style="--i:261"/><rect x="72.6" y="224.6" width="6.7" height="6.7" rx="1.2" style="--i:262"/><rect x="48.6" y="208.6" width="6.7" height="6.7" rx="1.2" style="--i:263"/><rect x="40.6" y="216.6" width="6.7" height="6.7" rx="1.2" style="--i:264"/><rect x="48.6" y="216.6" width="6.7" height="6.7" rx="1.2" style="--i:265"/><rect x="56.6" y="216.6" width="6.7" height="6.7" rx="1.2" style="--i:266"/><rect x="32.6" y="224.6" width="6.7" height="6.7" rx="1.2" style="--i:267"/><rect x="40.6" y="224.6" width="6.7" height="6.7" rx="1.2" style="--i:268"/><rect x="56.6" y="224.6" width="6.7" height="6.7" rx="1.2" style="--i:269"/><rect x="64.6" y="224.6" width="6.7" height="6.7" rx="1.2" style="--i:270"/><rect x="40.6" y="232.6" width="6.7" height="6.7" rx="1.2" style="--i:271"/><rect x="56.6" y="232.6" width="6.7" height="6.7" rx="1.2" style="--i:272"/><rect x="64.6" y="232.6" width="6.7" height="6.7" rx="1.2" style="--i:273"/><rect x="72.6" y="232.6" width="6.7" height="6.7" rx="1.2" style="--i:274"/><rect x="80.6" y="224.6" width="6.7" height="6.7" rx="1.2" style="--i:275"/><rect x="88.6" y="224.6" width="6.7" height="6.7" rx="1.2" style="--i:276"/><rect x="96.6" y="224.6" width="6.7" height="6.7" rx="1.2" style="--i:277"/><rect x="104.6" y="224.6" width="6.7" height="6.7" rx="1.2" style="--i:278"/><rect x="80.6" y="232.6" width="6.7" height="6.7" rx="1.2" style="--i:279"/><rect x="88.6" y="232.6" width="6.7" height="6.7" rx="1.2" style="--i:280"/><rect x="96.6" y="232.6" width="6.7" height="6.7" rx="1.2" style="--i:281"/><rect x="72.6" y="240.6" width="6.7" height="6.7" rx="1.2" style="--i:282"/><rect x="88.6" y="240.6" width="6.7" height="6.7" rx="1.2" style="--i:283"/><rect x="80.6" y="248.6" width="6.7" height="6.7" rx="1.2" style="--i:284"/><rect x="96.6" y="240.6" width="6.7" height="6.7" rx="1.2" style="--i:285"/><rect x="88.6" y="248.6" width="6.7" height="6.7" rx="1.2" style="--i:286"/><rect class="bit" x="62.3" y="256.8" width="19.3" height="19.3" rx="1.2" style="--i:287"/><rect class="bit" x="32.8" y="281.8" width="17.5" height="17.5" rx="1.2" style="--i:288"/><rect class="bit" x="41.8" y="238.3" width="17.5" height="17.5" rx="1.2" style="--i:289"/><rect class="bit" x="20.6" y="243.6" width="14.7" height="14.7" rx="1.2" style="--i:290"/><rect class="bit" x="27.0" y="265.5" width="12.0" height="12.0" rx="1.2" style="--i:291"/><rect class="bit" x="16.0" y="291.5" width="12.0" height="12.0" rx="1.2" style="--i:292"/><rect class="bit" x="6.0" y="273.5" width="11.0" height="11.0" rx="1.2" style="--i:293"/><rect class="bit" x="27.4" y="230.4" width="8.3" height="8.3" rx="1.2" style="--i:294"/><rect class="bit" x="48.3" y="265.3" width="7.4" height="7.4" rx="1.2" style="--i:295"/><rect class="bit" x="0.3" y="291.3" width="6.4" height="6.4" rx="1.2" style="--i:296"/><rect class="bit" x="8.2" y="260.2" width="4.6" height="4.6" rx="1.2" style="--i:297"/><rect class="bit" x="3.2" y="306.2" width="3.7" height="3.7" rx="1.2" style="--i:298"/></g></svg></div>
+      <div class="conteiner cta-texto" data-revelar>
+        <h2 class="titulo-secao" id="cta-titulo">Pare de decidir <em>no escuro</em>.</h2>
+        <p class="apoio">Conta pra gente como está a empresa hoje. A gente mostra por onde começar.</p>
+        <div class="acoes">
+          <span class="ima"><a class="btn btn-brasa btn-grande" href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20PowerMetrics.">Agendar diagnóstico <svg class="seta-px" viewBox="0 0 9 15" aria-hidden="true"><rect x="0" y="0" width="2.7" height="2.7"/><rect x="3" y="3" width="2.7" height="2.7"/><rect x="6" y="6" width="2.7" height="2.7"/><rect x="3" y="9" width="2.7" height="2.7"/><rect x="0" y="12" width="2.7" height="2.7"/></svg></a></span>
+          <a class="btn btn-vidro btn-grande" href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20PowerMetrics.">Chamar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner rodape-grade">
+      <div class="rodape-marca">
+        <a class="marca" href="./" aria-label="Grupo PowerMetrics, início">
+          <img src="assets/powermetrics-logo.png" alt="PowerMetrics" width="700" height="310" loading="lazy">
+        </a>
+        <p>Consultoria, Power BI, aplicativos, inteligência artificial e marketing. Um time só, com base em Marau (RS).</p>
+      </div>
+      <nav class="rodape-col" aria-label="Frentes">
+        <p class="olho">Frentes</p>
+        <a href="#frente-01"><b>01</b>Consultoria</a>
+        <a href="#frente-02"><b>02</b>Power BI</a>
+        <a href="#frente-03"><b>03</b>Aplicativos</a>
+        <a href="#frente-04"><b>04</b>Inteligência Artificial</a>
+        <a href="#frente-05"><b>05</b>Marketing</a>
+      </nav>
+      <nav class="rodape-col" aria-label="Empresa">
+        <p class="olho">Empresa</p>
+        <a href="#na-pratica">Na prática</a>
+        <a href="quem-somos.html">Quem somos</a>
+        <a href="blog.html">Conteúdo</a>
+        <a href="https://powermetrics-dash-6496.web.app/">Portal do cliente</a>
+      </nav>
+      <div class="rodape-col">
+        <p class="olho">Contato</p>
+        <a href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20PowerMetrics.">WhatsApp (54) 99214-2970</a>
+        <a href="https://www.instagram.com/powermetrics_id/">Instagram @powermetrics_id</a>
+        <span>Marau · Rio Grande do Sul</span>
+      </div>
+    </div>
+    <div class="conteiner rodape-base">
+      <span>© 2026 Grupo PowerMetrics</span>
+      <span>Prévia do site novo, em construção</span>
+    </div>
+  </footer>
+
+  <div class="barra-celular">
+    <a class="btn btn-vidro" href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20a%20PowerMetrics.">WhatsApp</a>
+    <a class="btn btn-brasa" href="https://wa.me/5554992142970?text=Ol%C3%A1%21%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20PowerMetrics.">Agendar diagnóstico</a>
+  </div>
+
+</body>
+</html>
