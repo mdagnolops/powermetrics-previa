@@ -105,20 +105,33 @@
     addEventListener('scroll', () => { if (visivel) atualizar(); }, { passive: true });
   });
 
-  // ---------- frentes: o anel gira até a frente escolhida ficar embaixo, ligada à ficha ----------
+  // ---------- frentes: o anel gira até a frente escolhida ficar virada pra ficha (ao lado no desktop, embaixo no celular).
+  // Sem ninguém mexer, ele troca de frente sozinho; o botão no centro pausa e continua.
   const dial = $('[data-dial]');
   let selecionarFrente = () => {};
+  let escolherFrente = () => {};
   if (dial) {
     const roda = $('.dial-roda', dial);
+    const palco = dial.closest('.frentes-palco') || dial;
     const rotulos = $$('[role="tab"]', dial);
     const arcos = $$('.arco', dial);
     const fichas = rotulos.map((b) => document.getElementById(b.getAttribute('aria-controls')));
     const nEl = $('.dial-n', dial), verboEl = $('.dial-verbo', dial);
-    let atual = -1, giro = 0;
-    const girarPara = (i, extra = 0) => {
-      const alvo = 90 - (-90 + i * 72); // ângulo do arco i no SVG: -90° + 72°·i; 90° = embaixo
-      giro += (((alvo - giro) % 360) + 540) % 360 - 180 + extra;
+    const play = $('.dial-play', dial), playTexto = $('.dial-play-texto', dial), tempo = $('.dial-tempo i', dial);
+    const deLado = matchMedia('(min-width: 960px)');
+    let atual = -1, giro = 0, automatico = !reduzido, emVista = false;
+    const girarPara = (i) => {
+      const virado = deLado.matches ? 0 : 90; // 0° = 3h (ficha ao lado), 90° = 6h (ficha embaixo)
+      const alvo = virado - (-90 + i * 72); // ângulo do arco i no SVG: -90° + 72°·i
+      giro += (((alvo - giro) % 360) + 540) % 360 - 180;
       roda.style.setProperty('--giro', `${giro}deg`);
+    };
+    const reiniciarTempo = () => { tempo.style.animation = 'none'; void tempo.offsetWidth; tempo.style.animation = ''; };
+    const estado = () => {
+      dial.classList.toggle('rodando', automatico && emVista);
+      play.setAttribute('aria-pressed', String(!automatico));
+      play.setAttribute('aria-label', automatico ? 'Pausar a troca automática das frentes' : 'Continuar a troca automática das frentes');
+      playTexto.textContent = automatico ? 'Pausar' : 'Continuar';
     };
     selecionarFrente = (i, focar = false) => {
       i = (i + rotulos.length) % rotulos.length;
@@ -138,13 +151,23 @@
       reiniciar(nEl, 'troca');
       reiniciar(verboEl, 'troca');
       reiniciar(fichas[i], 'anima');
+      reiniciarTempo();
     };
-    rotulos.forEach((b, i) => b.addEventListener('click', () => selecionarFrente(i)));
-    arcos.forEach((a, i) => a.addEventListener('click', () => selecionarFrente(i)));
+    // escolher uma frente na mão pausa a troca automática (o botão continua)
+    const escolher = (i, focar) => { automatico = false; estado(); selecionarFrente(i, focar); };
+    escolherFrente = escolher;
+    rotulos.forEach((b, i) => b.addEventListener('click', () => escolher(i)));
+    arcos.forEach((a, i) => a.addEventListener('click', () => escolher(i)));
     $('[role="tablist"]', dial).addEventListener('keydown', (e) => {
       const mapa = { ArrowRight: atual + 1, ArrowDown: atual + 1, ArrowLeft: atual - 1, ArrowUp: atual - 1, Home: 0, End: rotulos.length - 1 };
-      if (e.key in mapa) { e.preventDefault(); selecionarFrente(mapa[e.key], true); }
+      if (e.key in mapa) { e.preventDefault(); escolher(mapa[e.key], true); }
     });
+    play.addEventListener('click', () => { automatico = !automatico; reiniciarTempo(); estado(); });
+    tempo.addEventListener('animationend', () => { if (automatico && emVista) selecionarFrente(atual + 1); });
+    // com o mouse em cima (lendo a ficha), o tempo segura e volta a correr ao sair
+    palco.addEventListener('mouseenter', () => dial.classList.add('segura'));
+    palco.addEventListener('mouseleave', () => dial.classList.remove('segura'));
+    deLado.addEventListener('change', () => girarPara(atual));
     // começa uma volta atrás, sem transição; ao aparecer na tela, o anel dá uma volta e para na Consultoria
     roda.style.transition = 'none';
     selecionarFrente(0);
@@ -152,15 +175,20 @@
     roda.style.setProperty('--giro', `${giro}deg`);
     void roda.offsetWidth;
     roda.style.transition = '';
-    const ioDial = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return;
-      ioDial.disconnect();
-      if (!reduzido) roda.style.transition = '--giro 1.8s cubic-bezier(.65, 0, .35, 1)';
-      giro += 360;
-      roda.style.setProperty('--giro', `${giro}deg`);
-      setTimeout(() => { roda.style.transition = ''; }, 1900);
-    }, { threshold: 0.4 });
-    ioDial.observe(dial);
+    let primeiraVez = true;
+    new IntersectionObserver(([e]) => {
+      emVista = e.isIntersecting;
+      if (emVista && primeiraVez) {
+        primeiraVez = false;
+        if (!reduzido) roda.style.transition = '--giro 1.8s cubic-bezier(.65, 0, .35, 1)';
+        giro += 360;
+        roda.style.setProperty('--giro', `${giro}deg`);
+        setTimeout(() => { roda.style.transition = ''; }, 1900);
+      }
+      reiniciarTempo();
+      estado();
+    }, { threshold: 0.45 }).observe(dial);
+    estado();
   }
 
   // ---------- na prática: esteira horizontal guiada pela rolagem (desktop) ----------
@@ -248,12 +276,10 @@
     };
     barras.forEach((b) => b.firstElementChild.addEventListener('animationend', () => { if (emVista && !reduzido) mostrar(atual + 1); }));
     $$('[data-depo]', depoSecao).forEach((b) => b.addEventListener('click', () => mostrar(atual + Number(b.dataset.depo))));
-    const pausa = (sim) => depoSecao.classList.toggle('pausado', sim || !emVista);
-    depoSecao.addEventListener('mouseenter', () => pausa(true));
-    depoSecao.addEventListener('mouseleave', () => pausa(false));
-    depoSecao.addEventListener('focusin', () => pausa(true));
-    depoSecao.addEventListener('focusout', () => pausa(false));
-    new IntersectionObserver(([e]) => { emVista = e.isIntersecting; pausa(false); }, { threshold: 0.35 }).observe(depoSecao);
+    new IntersectionObserver(([e]) => {
+      emVista = e.isIntersecting;
+      depoSecao.classList.toggle('pausado', !emVista);
+    }, { threshold: 0.2 }).observe(depoSecao);
     if (reduzido) depoSecao.classList.add('sem-auto');
     mostrar(0);
   }
@@ -263,10 +289,7 @@
   if (conversa) {
     const msgs = $('.conversa-msgs', conversa);
     const itens = $$('.faq-item', conversa).map((it) => ({ p: $('dt', it).textContent.trim(), r: $('dd', it).textContent.trim() }));
-    const opcoes = document.createElement('div');
-    opcoes.className = 'conversa-opcoes';
-    opcoes.setAttribute('role', 'group');
-    opcoes.setAttribute('aria-label', 'Perguntas');
+    const opcoes = $('[data-opcoes]', conversa) || Object.assign(document.createElement('div'), { className: 'conversa-opcoes' });
     let ocupado = false;
     const rolar = () => msgs.scrollTo({ top: msgs.scrollHeight, behavior: reduzido ? 'instant' : 'smooth' });
     const bolha = (texto, quem) => {
@@ -302,7 +325,7 @@
       opcoes.append(b);
       return b;
     });
-    $('.conversa-janela', conversa).after(opcoes);
+    if (!opcoes.isConnected) $('.conversa-janela', conversa).after(opcoes);
     conversa.classList.add('pronta');
     const ioConversa = new IntersectionObserver(async ([e]) => {
       if (!e.isIntersecting) return;
@@ -312,19 +335,6 @@
       perguntar(0);
     }, { threshold: 0.35 });
     ioConversa.observe(conversa);
-  }
-
-  // ---------- lista de artigos: a capa segue o mouse ----------
-  if (mouseFino) {
-    $$('.linha-artigo').forEach((linha) => {
-      const capa = $('.la-capa', linha);
-      if (!capa) return;
-      linha.addEventListener('mousemove', (e) => {
-        const r = linha.getBoundingClientRect();
-        capa.style.setProperty("--cx", `${Math.round(e.clientX - r.left - 160)}px`);
-        capa.style.setProperty("--cy", `${Math.round(e.clientY - r.top - 90)}px`);
-      });
-    });
   }
 
   // ---------- chamada final: o símbolo acende quando a seção aparece ----------
@@ -364,7 +374,7 @@
   function seguirAncora(hash, suave) {
     if (!hash || hash === '#') return false;
     const m = hash.match(/^#frente-0([1-5])$/);
-    if (m && dial) { selecionarFrente(Number(m[1]) - 1); irPara(dial, suave); return true; }
+    if (m && dial) { escolherFrente(Number(m[1]) - 1); irPara(dial, suave); return true; }
     if (hash === '#inicio') { scrollTo({ top: 0, behavior: suave && !reduzido ? 'smooth' : 'instant' }); return true; }
     const alvo = document.getElementById(decodeURIComponent(hash.slice(1)));
     if (alvo) { irPara(alvo, suave); return true; }

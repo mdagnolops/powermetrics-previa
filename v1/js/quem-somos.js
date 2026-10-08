@@ -74,9 +74,12 @@
         nEl.textContent = frentes.join(' · ');
         verboEl.textContent = frentes.map((f) => NOMES[f]).join(' + ');
         extraEl.textContent = p.dataset.especialidade;
-        // o anel gira até a frente principal ficar virada pra pessoa (9h pra quem está à esquerda, 3h à direita)
-        const k = Number(frentes[0]) - 1;
-        const alvo = (naEsquerda(p) ? 180 : 0) - (-90 + k * 72);
+        // o anel gira até as frentes da pessoa ficarem viradas pra ela (9h pra quem está à esquerda, 3h à direita).
+        // Com duas frentes, mira no meio das duas: assim os dois arcos ficam do lado dela e cada um ganha um fio.
+        let sx = 0, sy = 0;
+        frentes.forEach((f) => { const a = ((-90 + (Number(f) - 1) * 72) * Math.PI) / 180; sx += Math.cos(a); sy += Math.sin(a); });
+        const meio = (Math.atan2(sy, sx) * 180) / Math.PI;
+        const alvo = (naEsquerda(p) ? 180 : 0) - meio;
         giro += (((alvo - giro) % 360) + 540) % 360 - 180;
         roda.style.setProperty('--giro', `${giro}deg`);
       } else {
@@ -107,13 +110,9 @@
       const t = clamp((agora - inicioFio) / 800, 0, 1), ease = 1 - Math.pow(1 - t, 3);
       linhas.forEach((linha, i) => {
         const f = frentes[i];
-        let mostra = Boolean(f);
+        const mostra = Boolean(f);
         let ax = 0, ay = 0;
-        if (f) {
-          const [x, y, cx] = pontoArco(f);
-          ax = x; ay = y;
-          if (i > 0) mostra = esq ? ax < cx : ax > cx; // o segundo fio só vai se o arco estiver do lado da pessoa
-        }
+        if (f) [ax, ay] = pontoArco(f);
         linha.style.display = pulsos[i].style.display = mostra ? '' : 'none';
         if (!mostra) return;
         const dx = ax - sx;
